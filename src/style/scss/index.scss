@@ -3,15 +3,25 @@
   margin: 0;
   padding: 0;
 }
+
+button,
+a {
+  font-family: "Noto Sans KR", sans-serif;
+  cursor: pointer;
+}
+
 $color1: #02343f;
 $color2: #f0edcc;
 
 html {
-  font-size: 16px;
+  font-size: 18px;
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+  }
 }
 
 body {
-  font-size: 1.3em;
+  width: 100%;
   display: flex;
   flex-direction: column;
   font-family: "Noto Sans KR", sans-serif;
@@ -24,7 +34,7 @@ body {
 header {
   color: #02343f;
   background-color: #f0edcc;
-  padding: 5em;
+  padding-top: 5em;
   text-align: center;
   max-height: 30em;
   font-weight: bolder;
@@ -38,32 +48,89 @@ main {
   flex: 1;
   background-color: $color1;
   color: $color2;
-
-  button,
-  input {
-    font-weight: 600;
-    border-radius: 100px;
-    font-size: 1.3em;
-    padding: 0.3em 1em;
-    border: 5px solid $color2;
-    outline: 0;
-    margin: 0 0.3em;
-  }
-  button {
-    color: $color1;
-    background-color: $color2;
-  }
-  input {
-    color: $color2;
-    background-color: $color1;
-  }
-}
-
-.result {
-  width: 100%;
-  text-align: center;
 }
 
 .main-nav {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: $color2;
+  top: 0;
+  position: sticky;
   padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  > .nav-item-wrap {
+    max-width: 30em;
+    width: 100%;
+    display: flex;
+    &.button {
+      margin-top: 1em;
+      border-radius: 100px;
+      overflow: hidden;
+      background-color: $color1;
+      > button {
+        &.center {
+          border-left: $color2 solid 3px;
+          border-right: $color2 solid 3px;
+        }
+        padding: 0.3em 1em;
+        background-color: black;
+        color: $color2;
+        background-color: $color1;
+        border: none;
+        font-size: 0.9em;
+        flex: 1;
+      }
+    }
+  }
+  .result {
+    font-weight: 600;
+    border-radius: 100px;
+    font-size: 0.9em;
+    padding: 0.3em 1em;
+    border: 5px solid $color1;
+    outline: 0;
+    margin: 0 0.3em;
+    &.copy {
+      color: $color2;
+      background-color: $color1;
+    }
+    &.text {
+      flex: 1;
+      color: $color1;
+      background-color: $color2;
+    }
+  }
+}
+.titleComponents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  > dl {
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    margin: 1em;
+    border-radius: 2em;
+    background-color: $color2;
+    width: 10em;
+    border: 2px solid $color2;
+    height: 10em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    dt {
+      padding: 0.5em;
+      font-size: 2em;
+    }
+    dd {
+      padding: 0.5em;
+      flex: 1;
+      background-color: $color1;
+    }
+    &:hover {
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+  }
 }
