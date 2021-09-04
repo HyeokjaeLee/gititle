@@ -6,18 +6,24 @@
 
 button,
 a {
-  font-family: "Noto Sans KR", sans-serif;
   cursor: pointer;
+}
+
+button,
+input,
+html {
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 $color1: #02343f;
 $color2: #f0edcc;
-
+$borderLine: 5px;
 html {
-  font-size: 18px;
+  word-break: keep-all;
   @media screen and (max-width: 600px) {
     font-size: 12px;
   }
+  font-size: 15px;
 }
 
 body {
@@ -27,14 +33,16 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: $color1;
+  color: $color2;
   min-height: 100vh;
 }
 
 header {
-  color: #02343f;
-  background-color: #f0edcc;
-  padding-top: 5em;
+  font-size: 1em;
+  color: $color1;
+  background-color: $color2;
+  padding-top: 4em;
   text-align: center;
   max-height: 30em;
   font-weight: bolder;
@@ -44,62 +52,86 @@ header {
   }
 }
 
-main {
-  flex: 1;
-  background-color: $color1;
-  color: $color2;
+footer {
+  font-size: 0.8em;
+  font-weight: lighter;
+  padding: {
+    top: 9em;
+    bottom: 4em;
+  }
+  text-align: center;
 }
 
+main {
+  flex: 1;
+}
+.space {
+  margin-right: 0.3em;
+}
 .main-nav {
+  font-size: 1.2em;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   background-color: $color2;
   top: 0;
   position: sticky;
-  padding: 1em;
+  padding: 0.8em 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   > .nav-item-wrap {
-    max-width: 30em;
     width: 100%;
     display: flex;
-    &.button {
-      margin-top: 1em;
-      border-radius: 100px;
-      overflow: hidden;
-      background-color: $color1;
-      > button {
-        &.center {
-          border-left: $color2 solid 3px;
-          border-right: $color2 solid 3px;
-        }
-        padding: 0.3em 1em;
-        background-color: black;
-        color: $color2;
-        background-color: $color1;
-        border: none;
-        font-size: 0.9em;
-        flex: 1;
-      }
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8em;
+  }
+  .button {
+    border: $borderLine solid $color1;
+    background-color: $color1;
+    color: $color2;
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 0.8em 1.5em;
+    border-radius: 1000px;
+    &.emoji {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-right: 4px;
+    }
+    &.type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-right: 1em;
+    }
+    transition: background-color 0.3s, color 0.3s;
+    &:hover {
+      background-color: $color2;
+      color: $color1;
     }
   }
-  .result {
-    font-weight: 600;
+  .result-area {
     border-radius: 100px;
-    font-size: 0.9em;
-    padding: 0.3em 1em;
-    border: 5px solid $color1;
-    outline: 0;
-    margin: 0 0.3em;
-    &.copy {
-      color: $color2;
-      background-color: $color1;
-    }
-    &.text {
-      flex: 1;
-      color: $color1;
+    border: $borderLine solid $color1;
+    display: flex;
+    color: $color1;
+    padding: 0.8em;
+    font-weight: 600;
+    min-width: 30em;
+    input {
+      outline: 0;
       background-color: $color2;
+      border: none;
+      font-size: 1em;
+      font-weight: 600;
+      color: $color1;
+    }
+    .scope-area {
+      width: 3.5em;
+    }
+    .subject-area {
+      flex: 1;
     }
   }
 }
@@ -113,24 +145,28 @@ main {
     margin: 1em;
     border-radius: 2em;
     background-color: $color2;
-    width: 10em;
-    border: 2px solid $color2;
+    width: 20em;
+    border: $borderLine solid $color2;
     height: 10em;
     text-align: center;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     dt {
+      font-weight: 900;
+      color: $color1;
+      text-align: center;
+      font-size: 1.7em;
       padding: 0.5em;
-      font-size: 2em;
     }
     dd {
+      text-align: left;
       padding: 0.5em;
       flex: 1;
       background-color: $color1;
     }
     &:hover {
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 10px $color2;
     }
   }
 }

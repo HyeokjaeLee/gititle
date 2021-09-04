@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Gititle</title>
+    <title>Gititle | Github Commit Title Creation Helper</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style/css/index.min.css" />
   </head>
   <body>
@@ -14,62 +15,30 @@
     <main>
       <nav class="main-nav">
         <div class="nav-item-wrap">
-          <input type="text" class="result text" /><button class="result copy">Copy</button>
-        </div>
-        <div class="nav-item-wrap button">
-          <button>Emoji</button><button class="center">Type</button><button>Subject</button>
+          <div class="result-area" id="result-text">
+            <span class="space" id="emoji">{{emoji}}</span>
+            <span id="type">{{type}}</span>
+            <span>(</span>
+            <input type="text" class="scope-area" placeholder="#00" id="scope" />
+            <span>)</span>
+            <span class="space">:</span>
+            <input type="text" class="subject-area" id="subject" placeholder="수정 내용" />
+          </div>
+          <button class="button copy" onclick="copy_txt()">Copy</button>
+          <span
+            ><button class="button emoji" onclick="change2emoji()">Emoji</button
+            ><button class="button type" onclick="change2type()">Type</button></span
+          >
         </div>
       </nav>
-      <div class="titleComponents">
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
-        </dl>
-        <dl>
-          <dt>🎨</dt>
-          <dd>디자인 변경</dd>
+      <div class="titleComponents" id="component-wrap">
+        <dl v-for="item in items" v-on:click="set_component(item.component)">
+          <dt>{{item.component}}</dt>
+          <dd>{{item.description}}</dd>
         </dl>
       </div>
     </main>
+    <script src="src/js/index.js"></script>
+    <footer>© HyeokjaeLee. All rights reserved. Powered by GitHub Pages.</footer>
   </body>
 </html>
