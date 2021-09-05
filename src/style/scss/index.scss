@@ -145,7 +145,7 @@ main {
     margin: 1em;
     border-radius: 2em;
     background-color: $color2;
-    width: 20em;
+    width: 15em;
     border: $borderLine solid $color2;
     height: 10em;
     text-align: center;
@@ -156,10 +156,11 @@ main {
       font-weight: 900;
       color: $color1;
       text-align: center;
-      font-size: 1.7em;
-      padding: 0.5em;
+      font-size: 2em;
+      padding: 0.2em;
     }
     dd {
+      white-space: pre-line;
       text-align: left;
       padding: 0.5em;
       flex: 1;

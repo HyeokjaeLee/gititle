@@ -1,10 +1,10 @@
 const emojiList = [
-    { component: "🎨", description: "코드 형식 변경/구조 개선" },
-    { component: "⚡️", description: "성능 개선" },
+    { component: "🎨", description: "코드 형식 변경/구조" },
+    { component: "⚡️", description: "성능" },
     { component: "🔥", description: "파일 또는 코드 삭제" },
     { component: "🐛", description: "버그 수정" },
     { component: "🚑️", description: "긴급 수정" },
-    { component: "✨", description: "새로운 기능 추가" },
+    { component: "✨", description: "기능" },
     { component: "📝", description: "문서 수정 또는 추가" },
     { component: "🚀", description: "사용자 배포" },
     { component: "💄", description: "디자인 수정" },
@@ -68,10 +68,14 @@ const emojiList = [
   ],
   typeList = [
     { component: "Fix", description: "올바르지 않은 동작을 수정" },
-    { component: "Add", description: "무언가를 추가" },
-    { component: "Remove", description: "무언가를 삭제" },
-    { component: "Use", description: "특별히 무언가를 사용해 구현 하는 경우" },
-    { component: "IMPLEMENT", description: "특별히 무언가를 사용해 구현 하는 경우" },
+    { component: "Add", description: "특정 파일, 코드등을 추가" },
+    { component: "Remove", description: "특정 파일, 코드등을 삭제" },
+    { component: "Use", description: "특별히 무언가를 사용한 구현" },
+    { component: "Refactor", description: "대규모 리팩토링 (응집도, 결합도 개선등)" },
+    { component: "Simplify", description: "소규모 리팩토링 (중복코드 개선등)" },
+    { component: "Update", description: "올바른 동작을 보완" },
+    { component: "Improve", description: "호환성, 접근성 성능등을 개선" },
+    { component: "Make", description: "기존 동작을 수정" },
   ];
 
 let target = "emoji";
