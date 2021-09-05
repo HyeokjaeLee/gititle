@@ -33,12 +33,12 @@
       </nav>
       <div class="titleComponents" id="component-wrap">
         <dl v-for="item in items" v-on:click="set_component(item.component)">
-          <dt>
-            <span v-if="!!item.example" class="example title">Example</span>
-            {{item.component}}
-          </dt>
-          <dd v-if="!!item.example" class="example">{{item.example}}</dd>
-          <dd :class="[!!item.example ? 'description' : '']">{{(item.description)}}</dd>
+          <dt>{{item.component}}</dt>
+          <dd>{{(item.description)}}</dd>
+          <dd v-if="!!item.example" class="test">
+            <h4>Example</h4>
+            {{item.example}}
+          </dd>
         </dl>
       </div>
     </main>

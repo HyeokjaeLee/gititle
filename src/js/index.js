@@ -70,7 +70,8 @@ const emojiList = [
     {
       component: "Fix",
       description: "Fix incorrect something",
-      example: "Fix(): payment Error\nFix changelog entry\nFix search path.",
+      example:
+        "🚑️ Fix(#123): payment system\n🐛 Fix: log format\n🔒️ Fix(#321): authentication features",
     },
     { component: "Add", description: "Add new code or files", example: "" },
     { component: "Remove", description: "Remove code or files" },
@@ -80,7 +81,7 @@ const emojiList = [
     { component: "Update", description: "Update or supplement code", example: "" },
     { component: "Improve", description: "Improve Something", example: "" },
     { component: "Make", description: "Make existing something difference", example: "" },
-    { component: "Implement", description: "Implement someting", example: "" },
+    { component: "Implement", description: "Implement someting", example: "ss" },
     { component: "Revise", description: "", example: "" },
     { component: "Correct", description: "", example: "" },
     { component: "Ensure", description: "", example: "" },
