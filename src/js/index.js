@@ -110,14 +110,14 @@ function copy_txt() {
 const emojiElement = new Vue({
   el: "#emoji",
   data: {
-    emoji: "⚡️",
+    emoji: "🍻",
   },
 });
 
 const typeElement = new Vue({
   el: "#type",
   data: {
-    type: "Feat",
+    type: "Make",
   },
 });
 
