@@ -170,18 +170,22 @@ main {
       text-align: left;
       padding: 0 0.5em;
       flex: 1;
-      border-radius: 4px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
       background-color: $color1;
-      &.test {
-        color: white;
-        padding: 0.5em;
-        display: none;
-        z-index: 3;
-        background-color: rgba(black, 0.8);
-        top: 5em;
-        width: 24em;
-        position: absolute;
-      }
+      transition: background-color 0.3s;
+    }
+    .test {
+      border-radius: 5px;
+      color: white;
+      padding: 0.6em;
+      display: none;
+      z-index: 3;
+      background-color: rgba(black, 0.8);
+      top: 5em;
+      width: 25em;
+      position: absolute;
+      white-space: pre-line;
     }
     .example {
       display: none;
@@ -191,12 +195,14 @@ main {
         -webkit-animation: jello-horizontal 0.9s 0.6s both;
         animation: jello-horizontal 0.9s 0.6s both;
       }
+
+      .test {
+        -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        display: block;
+      }
       dd {
-        &.test {
-          -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          display: block;
-        }
+        background-color: lighten($color1, 4%);
       }
       .example {
         display: inline-block;
@@ -209,7 +215,6 @@ main {
       .description {
         display: none;
       }
-      box-shadow: 0 0 10px $color2;
     }
   }
 }
