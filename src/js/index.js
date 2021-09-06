@@ -94,19 +94,17 @@ const emojiList = [
     { component: "Pass", description: "", example: "" },
   ];
 
-let target = "emoji";
-
 function copy_txt() {
   let scope = document.getElementById("scope").value;
-  const subject = document.getElementById("subject").value;
   scope = scope ? `(${scope})` : "";
+  const subject = document.getElementById("subject").value;
   const resultTxt = `${emojiElement.emoji} ${typeElement.type}${scope}: ${subject}`;
-  var temp = document.createElement("textarea");
-  document.body.appendChild(temp);
-  temp.value = resultTxt;
-  temp.select();
+  const temp4copy = document.createElement("textarea");
+  document.body.appendChild(temp4copy);
+  temp4copy.value = resultTxt;
+  temp4copy.select();
   document.execCommand("copy");
-  document.body.removeChild(temp);
+  document.body.removeChild(temp4copy);
   alert(resultTxt);
 }
 
@@ -126,26 +124,21 @@ const typeElement = new Vue({
 const componentWrap = new Vue({
   el: "#component-wrap",
   data: {
-    parentMessage: "Parent",
+    target: "emoji",
     items: emojiList,
   },
   methods: {
     set_component: function (component) {
-      if (target === "emoji") {
-        emojiElement.emoji = component;
-      } else {
-        typeElement.type = component;
-      }
+      this.target === "emoji" ? (emojiElement.emoji = component) : (typeElement.type = component);
     },
   },
 });
+
 function change2emoji() {
-  target = "emoji";
+  componentWrap.target = "emoji";
   componentWrap.items = emojiList;
 }
 function change2type() {
-  target = "type";
+  componentWrap.target = "type";
   componentWrap.items = typeList;
 }
-
-console.log(emojiElement);
