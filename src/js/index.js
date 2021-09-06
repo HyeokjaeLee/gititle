@@ -114,6 +114,7 @@ const emojiElement = new Vue({
     emoji: "⚡️",
   },
 });
+
 const typeElement = new Vue({
   el: "#type",
   data: {
@@ -121,8 +122,8 @@ const typeElement = new Vue({
   },
 });
 
-const componentWrap = new Vue({
-  el: "#component-wrap",
+const keywordWrap = new Vue({
+  el: "#keyword-wrap",
   data: {
     target: "emoji",
     items: emojiList,
@@ -135,10 +136,10 @@ const componentWrap = new Vue({
 });
 
 function change2emoji() {
-  componentWrap.target = "emoji";
-  componentWrap.items = emojiList;
+  keywordWrap.target = "emoji";
+  keywordWrap.items = emojiList;
 }
 function change2type() {
-  componentWrap.target = "type";
-  componentWrap.items = typeList;
+  keywordWrap.target = "type";
+  keywordWrap.items = typeList;
 }

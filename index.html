@@ -31,11 +31,11 @@
           >
         </div>
       </nav>
-      <div class="titleComponents" id="component-wrap">
-        <dl v-for="item in items" v-on:click="set_component(item.component)">
-          <dt>{{item.component}}</dt>
-          <dd>{{(item.description)}}</dd>
-          <dd v-if="!!item.example" class="test">
+      <div class="keyword-wrap" id="keyword-wrap">
+        <dl v-for="item in items" v-on:click="set_component(item.component)" class="keyword">
+          <dt class="name" :class="[target==='emoji'?'emoji':'type']">{{item.component}}</dt>
+          <dd class="description">{{(item.description)}}</dd>
+          <dd v-if="!!item.example" class="example">
             <strong>Example</strong>
             {{item.example}}
           </dd>
