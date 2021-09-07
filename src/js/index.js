@@ -151,11 +151,24 @@ const emojiList = [
       description: "Avoid specific processing\n('if' statement, etc)",
       example: "🩹 Avoid(get_data): unintended execution",
     },
-    { component: "Move", description: "", example: "" },
-    { component: "Rename", description: "", example: "" },
-    { component: "Verify", description: "", example: "" },
-    { component: "Set", description: "", example: "" },
-    { component: "Pass", description: "", example: "" },
+    { component: "Move", description: "Move something", example: "" },
+    { component: "Rename", description: "Rename something", example: "" },
+    { component: "Allow", description: "Allow something", example: "" },
+    {
+      component: "Verify",
+      description: "Verify something",
+      example: "⚗️ Verify(get_query): parameter type",
+    },
+    {
+      component: "Set",
+      description: "Change small things\n(variable values, etc.)",
+      example: "🚸 Set: contentsPerPage to 6",
+    },
+    {
+      component: "Pass",
+      description: "Pass something\n(parameter, etc.)",
+      example: "🚧 Pass: regionData to get_data",
+    },
   ];
 
 function copy_txt() {
