@@ -20,7 +20,6 @@ $color2: #f0edcc;
 $borderLine: 5px;
 html {
   word-break: keep-all;
-  font-size: 15px;
 }
 
 body {
@@ -36,7 +35,6 @@ body {
 }
 
 header {
-  font-size: 1em;
   color: $color1;
   background-color: $color2;
   padding-top: 4em;
@@ -66,10 +64,9 @@ main {
   margin-right: 0.3em;
 }
 .main-nav {
-  z-index: 5;
-  font-size: 1.2em;
-  @media screen and (max-width: 60em) {
-    font-size: 0.5em;
+  z-index: 3;
+  @media screen and (max-width: 56em) {
+    font-size: 0.8em;
   }
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   background-color: $color2;
@@ -151,7 +148,7 @@ main {
   border-radius: 5px;
   background-color: $color2;
   width: 25em;
-  @media screen and (max-width: 54em) {
+  @media screen and (max-width: 56em) {
     width: 100%;
   }
   border: 2px solid $color2;
