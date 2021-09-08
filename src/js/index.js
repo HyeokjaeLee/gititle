@@ -226,9 +226,11 @@ function change2emoji() {
   keywordWrap.target = "emoji";
   keywordWrap.originalItems = emojiList;
   keywordWrap.items = emojiList;
+  keywordWrap.search_keyword();
 }
 function change2type() {
   keywordWrap.target = "type";
   keywordWrap.originalItems = typeList;
   keywordWrap.items = typeList;
+  keywordWrap.search_keyword();
 }
