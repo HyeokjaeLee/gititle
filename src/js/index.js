@@ -184,7 +184,7 @@ function copy_txt() {
   temp4copy.select();
   document.execCommand("copy");
   document.body.removeChild(temp4copy);
-  alert(`Copy '${resultTxt}'  done.`);
+  alert(`'${resultTxt}' copied to the clipboard.`);
 }
 
 const emojiElement = new Vue({
