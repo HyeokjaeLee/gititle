@@ -48,6 +48,10 @@ header {
 }
 
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-size: 0.8em;
   font-weight: lighter;
   padding: {
@@ -402,5 +406,13 @@ main {
     -webkit-transform-origin: top;
     transform-origin: top;
     opacity: 1;
+  }
+}
+
+.githubLink {
+  margin: 1em;
+  > svg {
+    fill: $color2;
+    width: 3em;
   }
 }
