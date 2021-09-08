@@ -135,6 +135,24 @@ main {
   }
 }
 
+.search-wrap {
+  width: 100%;
+  text-align: center;
+  margin: 1em;
+  .search {
+    margin-top: 0.5em;
+    max-width: 90%;
+    width: 30em;
+    font-size: 1.5em;
+    padding: 0.3em;
+    border-radius: 5px;
+    background-color: $color1;
+    border: 2px solid $color2;
+    color: $color2;
+    outline: 0;
+  }
+}
+
 .keyword-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -193,7 +211,7 @@ main {
     color: white;
     padding: 0.6em;
     display: none;
-    z-index: 3;
+    z-index: 2;
     background-color: rgba(black, 0.8);
     top: 4.5em;
     left: -0.6em;
