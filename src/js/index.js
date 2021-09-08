@@ -202,21 +202,33 @@ const typeElement = new Vue({
 const keywordWrap = new Vue({
   el: "#keyword-wrap",
   data: {
+    search: "",
     target: "emoji",
+    originalItems: emojiList,
     items: emojiList,
   },
   methods: {
     set_component: function (component) {
       this.target === "emoji" ? (emojiElement.emoji = component) : (typeElement.type = component);
     },
+    search_keyword: function () {
+      this.items = this.originalItems;
+      this.search
+        ? (this.items = this.items.filter((item) =>
+            item.description.toLowerCase().includes(this.search.toLowerCase())
+          ))
+        : (this.items = this.originalItems);
+    },
   },
 });
 
 function change2emoji() {
   keywordWrap.target = "emoji";
+  keywordWrap.originalItems = emojiList;
   keywordWrap.items = emojiList;
 }
 function change2type() {
   keywordWrap.target = "type";
+  keywordWrap.originalItems = typeList;
   keywordWrap.items = typeList;
 }

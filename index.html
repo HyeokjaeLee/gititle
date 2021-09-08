@@ -38,7 +38,14 @@
       </nav>
       <div class="keyword-wrap" id="keyword-wrap">
         <div class="search-wrap">
-          <input type="text" class="search" placeholder="Search keyword" id="search" />
+          <input
+            type="text"
+            class="search"
+            placeholder="Search keyword"
+            id="search"
+            v-model="search"
+            @input="search_keyword(search)"
+          />
         </div>
         <dl v-for="item in items" v-on:click="set_component(item.component)" class="keyword">
           <dt class="name" :class="[target==='emoji'?'emoji':'type']">{{item.component}}</dt>
