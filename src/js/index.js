@@ -187,6 +187,8 @@ function copy_txt() {
   alert(`'${resultTxt}' copied to the clipboard.`);
   document.getElementById("scope").value = "";
   document.getElementById("subject").value = "";
+  keywordWrap.search = "";
+  change2emoji();
   copiedLog.history.unshift({
     emoji: emojiElement.emoji,
     type: typeElement.type,
