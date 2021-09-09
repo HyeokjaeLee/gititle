@@ -17,6 +17,7 @@ html {
 
 $color1: black;
 $color2: white;
+$color3: mix($color1, $color2);
 $borderLine: 5px;
 html {
   word-break: keep-all;
@@ -91,6 +92,7 @@ main {
   }
   .button {
     &.log {
+      position: relative;
       padding: 0;
       > svg {
         padding: 0.35em;
@@ -437,4 +439,15 @@ main {
       fill: darken($color2, 50%);
     }
   }
+}
+
+.log-list {
+  left: 100%;
+  top: 115%;
+  position: absolute;
+  background: rgba($color3, 0.9);
+  width: 50em;
+  height: 12em;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
