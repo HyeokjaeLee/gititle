@@ -32,7 +32,7 @@
               />
             </svg>
             <ul class="log-list">
-              <div>Recent copied titles:</div>
+              <li class="static-txt">Recent copied titles</li>
               <li v-for="title in history">
                 <a v-on:click="get_history(title)"
                   >{{`${title.emoji} ${title.type+title.scope}: ${title.subject}`}}</a
