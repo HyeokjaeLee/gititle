@@ -89,17 +89,6 @@ main {
     flex-wrap: wrap;
     gap: 0.8em;
   }
-  .log-button {
-    background-color: $color2;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1em;
-    > svg {
-      height: 2em;
-    }
-  }
   .button {
     border: $borderLine solid $color1;
     background-color: $color1;
