@@ -10,7 +10,7 @@
 
 Gitile is designed to help you write more standardized commit message titles using emoji.
 <br>Most of the environments that use Git is used is a PC.
-<br>So **:warning: it's not optimized for the mobile environment**.
+<br>:warning: So **it's not optimized for the mobile environment**.
 
 ## :tada: Contributing to gittle
 
