@@ -15,8 +15,8 @@ html {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-$color1: #02343f;
-$color2: #f0edcc;
+$color1: black;
+$color2: white;
 $borderLine: 5px;
 html {
   word-break: keep-all;
@@ -88,6 +88,17 @@ main {
     align-items: center;
     flex-wrap: wrap;
     gap: 0.8em;
+  }
+  .log-button {
+    background-color: $color2;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+    > svg {
+      height: 2em;
+    }
   }
   .button {
     border: $borderLine solid $color1;
@@ -228,7 +239,7 @@ main {
       animation: jello-horizontal 0.9s 0.3s both;
     }
     > .description {
-      background-color: lighten($color1, 4%);
+      background-color: lighten($color1, 30%);
     }
     > .example {
       -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
@@ -412,7 +423,13 @@ main {
 .githubLink {
   margin: 1em;
   > svg {
+    transition: fill 0.3s;
     fill: $color2;
     width: 3em;
+  }
+  &:hover {
+    > svg {
+      fill: darken($color2, 50%);
+    }
   }
 }
