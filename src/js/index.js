@@ -185,6 +185,17 @@ function copy_txt() {
   document.execCommand("copy");
   document.body.removeChild(temp4copy);
   alert(`'${resultTxt}' copied to the clipboard.`);
+  document.getElementById("scope").value = "";
+  document.getElementById("subject").value = "";
+  copiedLog.history.unshift({
+    emoji: emojiElement.emoji,
+    type: typeElement.type,
+    scope: scope,
+    subject: subject,
+  });
+  if (copiedLog.history.length > 10) {
+    copiedLog.history.pop();
+  }
 }
 
 const emojiElement = new Vue({
@@ -198,6 +209,23 @@ const typeElement = new Vue({
   el: "#type",
   data: {
     type: "Make",
+  },
+});
+
+const copiedLog = new Vue({
+  el: "#copied-log",
+  data: {
+    open: false,
+    history: [],
+  },
+  methods: {
+    get_history: function (title) {
+      console.log(this.open);
+      emojiElement.emoji = title.emoji;
+      typeElement.type = title.type;
+      document.getElementById("scope").value = title.scope.replace(/\(|\)/g, "");
+      document.getElementById("subject").value = title.subject;
+    },
   },
 });
 
@@ -235,4 +263,8 @@ function change2type() {
   keywordWrap.originalItems = typeList;
   keywordWrap.items = typeList;
   keywordWrap.search_keyword();
+}
+
+function set_log_list() {
+  copiedLog.open = copiedLog.open ? false : true;
 }

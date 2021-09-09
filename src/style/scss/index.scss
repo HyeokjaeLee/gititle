@@ -17,6 +17,7 @@ html {
 
 $color1: black;
 $color2: white;
+$color3: mix($color1, $color2);
 $borderLine: 5px;
 html {
   word-break: keep-all;
@@ -90,6 +91,23 @@ main {
     gap: 0.8em;
   }
   .button {
+    &.log {
+      position: relative;
+      padding: 0;
+      > svg {
+        padding: 0.35em;
+        padding-bottom: 0;
+        width: 2em;
+        height: 2em;
+        fill: $color2;
+        transition: fill 0.3s;
+      }
+      &:hover {
+        > svg {
+          fill: $color1;
+        }
+      }
+    }
     border: $borderLine solid $color1;
     background-color: $color1;
     color: $color2;
@@ -421,4 +439,38 @@ main {
       fill: darken($color2, 50%);
     }
   }
+}
+
+.log-list {
+  text-align: left;
+  padding: 1em;
+  left: 100%;
+  top: 100%;
+  position: absolute;
+  background: rgba($color3, 0.9);
+  width: 50em;
+  min-height: 12em;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  display: none;
+  &.show {
+    display: block;
+  }
+  > li {
+    color: $color2;
+    margin-left: 1em;
+    width: 100%;
+    > a {
+      transition: color 0.3s;
+      display: block;
+      &:hover {
+        color: $color1;
+      }
+    }
+  }
+}
+
+@mixin swing-in-top-fwd($duration: 1s, $delay: 0s) {
+  -webkit-animation: swing-in-top-fwd $duration cubic-bezier(0.175, 0.885, 0.32, 1.275) $delay both;
+  animation: swing-in-top-fwd $duration cubic-bezier(0.175, 0.885, 0.32, 1.275) $delay both;
 }
