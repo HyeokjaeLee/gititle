@@ -185,6 +185,17 @@ function copy_txt() {
   document.execCommand("copy");
   document.body.removeChild(temp4copy);
   alert(`'${resultTxt}' copied to the clipboard.`);
+  document.getElementById("scope").value = "";
+  document.getElementById("subject").value = "";
+  copiedLog.history.push({
+    emoji: emojiElement.emoji,
+    type: typeElement.type,
+    scope: scope,
+    subject: subject,
+  });
+  if (copiedLog.history.length > 10) {
+    copiedLog.history.shift();
+  }
 }
 
 const emojiElement = new Vue({
@@ -198,6 +209,13 @@ const typeElement = new Vue({
   el: "#type",
   data: {
     type: "Make",
+  },
+});
+
+const copiedLog = new Vue({
+  el: "#copied-log",
+  data: {
+    history: [],
   },
 });
 

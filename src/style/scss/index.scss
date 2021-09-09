@@ -442,12 +442,31 @@ main {
 }
 
 .log-list {
+  text-align: left;
+  padding: 1em;
   left: 100%;
-  top: 115%;
+  top: 100%;
   position: absolute;
   background: rgba($color3, 0.9);
   width: 50em;
-  height: 12em;
+  min-height: 12em;
   border-radius: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  > li {
+    color: $color2;
+    margin-left: 1em;
+    width: 100%;
+    > a {
+      transition: color 0.3s;
+      display: block;
+      &:hover {
+        color: $color1;
+      }
+    }
+  }
+}
+
+@mixin swing-in-top-fwd($duration: 1s, $delay: 0s) {
+  -webkit-animation: swing-in-top-fwd $duration cubic-bezier(0.175, 0.885, 0.32, 1.275) $delay both;
+  animation: swing-in-top-fwd $duration cubic-bezier(0.175, 0.885, 0.32, 1.275) $delay both;
 }
