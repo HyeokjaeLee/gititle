@@ -452,6 +452,10 @@ main {
   min-height: 12em;
   border-radius: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  display: none;
+  &.show {
+    display: block;
+  }
   > li {
     color: $color2;
     margin-left: 1em;
