@@ -1,13 +1,8 @@
 {
-  "name": "Gititle",
-  "short_name": "Gititle",
-  "start_url": "./",
-  "scope": ".",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#ffffff",
   "theme_color": "#000000",
-  "newBranch": "true",
+  "background_color": "white",
+  "description": "Git commit title creation helper",
+  "display": "standalone",
   "icons": [
     {
       "src": "assets/icons/icon-192x192.png",
@@ -30,5 +25,8 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "name": "Gititle | Git commit title creation helper",
+  "short_name": "Gititle",
+  "start_url": "/gititle/index.html"
 }
