@@ -247,3 +247,17 @@
     }
   }
 }
+
+#install-button {
+  padding: 0.5em;
+  right: 0;
+  position: fixed;
+  font-weight: bolder;
+  font-size: 1em;
+  border: none;
+  background-color: $color2;
+  transition: color 0.3s;
+  &:hover {
+    color: $color3;
+  }
+}
