@@ -2,6 +2,7 @@ window.addEventListener("load", main);
 function main() {
   vaildateCacheIfOnline().then((_) => {});
 }
+
 function vaildateCacheIfOnline() {
   return new Promise((resolve, reject) => {
     fetch(`config.json?cacheBust=${new Date().getTime()}`)
