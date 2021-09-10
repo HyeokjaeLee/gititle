@@ -1,137 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--meta-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta
-      name="description"
-      content="Open Github PWA is a template for building PWA with github pages"
-    />
-    <meta name="author" content="Hyeokjae Lee" />
-    <meta name="theme-color" content="#ffffff" />
-    <!--meta og-->
-    <meta property="og:title" content="Gititle" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Open Github PWA is a template for building PWA with github pages">
+
+    <!--Social meta-->
+    <meta property="og:title" content="Open Github PWA" />
     <meta property="og:url" content="" />
-    <meta
-      property="og:description"
-      content="Gititle is a Github Commit Title Creation Helper. It helps you to create a commit title with a simple input."
-    />
+    <meta property="og:description"
+        content="This is a PWA boilerplate, with cache busting mechanism and preconfigured Github Pages deployment" />
     <meta property="og:image" content="/assets/icons/icon.png" />
     <meta property="og:type" content="website" />
-    <!--icon-->
-    <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/icon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="256x256" href="assets/icons/icon-256x256.png" />
-    <link rel="apple-touch-icon" sizes="384x384" href="assets/icons/icon-384x384.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="assets/icons/icon-512x512.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-512x512.png" />
-    <link rel="icon" type="image/png" href="assets/icons/icon-512x512.png" />
-    <!--vue.js-->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!--others-->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" href="style/css/main.min.css" />
-    <title>Gititle</title>
-  </head>
-  <body>
-    <header>
-      <h1>Gititle</h1>
-      <p>Github Commit Title Creation Helper</p>
-    </header>
-    <main>
-      <nav class="main-nav">
-        <div class="nav-item-wrap">
-          <button
-            class="button log"
-            id="copied-log"
-            onclick="set_log_list()"
-            :class="[open?'show':'']"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 26 26"
-              enable-background="new 0 0 26 26"
-              height="1em"
-            >
-              <path
-                d="M 13 0 L 8 3 L 13 6 L 13 4 C 17.954545 4 22 8.0454545 22 13 C 22 17.954545 17.954545 22 13 22 C 8.0454545 22 4 17.954545 4 13 C 4 10.546914 4.883324 8.429176 6.5 6.8125 L 5.09375 5.40625 C 3.110426 7.389574 2 10.053086 2 13 C 2 19.045455 6.9545455 24 13 24 C 19.045455 24 24 19.045455 24 13 C 24 6.9545455 19.045455 2 13 2 L 13 0 z M 10.90625 6.5625 L 9.09375 7.4375 L 11.625 12.4375 C 11.556134 12.609661 11.5 12.803249 11.5 13 C 11.5 13.020506 11.499185 13.042194 11.5 13.0625 L 8.28125 16.28125 L 9.71875 17.71875 L 12.9375 14.5 C 12.957806 14.500815 12.979494 14.5 13 14.5 C 13.828427 14.5 14.5 13.828427 14.5 13 C 14.5 12.309644 14.04112 11.737133 13.40625 11.5625 L 10.90625 6.5625 z"
-              />
-            </svg>
-            <ul class="log-list">
-              <li class="static-txt">Recent copied titles</li>
-              <li v-for="title in history">
-                <a v-on:click="get_history(title)"
-                  >{{`${title.emoji} ${title.type+title.scope}: ${title.subject}`}}</a
-                >
-              </li>
-            </ul>
-          </button>
-          <div class="result-area" id="result-text">
-            <span class="space" id="emoji">{{emoji}}</span>
-            <span id="type">{{type}}</span>
-            <span>(</span>
-            <input type="text" class="scope-area" placeholder="#000" id="scope" />
-            <span>)</span>
-            <span class="space">:</span>
-            <input
-              type="text"
-              class="subject-area"
-              id="subject"
-              placeholder="your commit message title"
-            />
-          </div>
-          <button class="button copy" onclick="copy_txt()">Copy</button>
-          <span
-            ><button class="button emoji" onclick="change2emoji()">Emoji</button
-            ><button class="button type" onclick="change2type()">Type</button></span
-          >
+    <!---->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon.png">
+    <link rel="icon" type="image/png" href="assets/icons/icon.png" />
+
+
+    <meta name="theme-color" content="#640700">
+    <link rel="manifest" href="manifest.json">
+    <!---->
+
+    <!---->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Open Github PWA</title>
+</head>
+
+<body>
+    <div id="appContainer" class="container">
+        <header>
+            <h1> Open Github PWA </h1>
+            <div id="version">
+
+            </div>
+        </header>
+        <div class="body">
+
+            <p>
+                This is a PWA , deployed using Github Pages (Free and Awesome) with cache bust mechanism.
+            </p>
+            <p>
+                Build your own pwa in 2 mins, follow the bellow steps
+            </p>
+            <ol>
+                <li>Fork this project on github</li>
+                <li>Enable github pages option</li>
+                <li>Done!! access your github pages url</li>
+            </ol>
+            <p>
+                Check <a href="https://github.com/PranoySarkar/OpenPWA">here </a>  for more information 
+            </p>
+            <p>
+                At the beginning it might take some time to deploy, if it shows 404 wait for 5 mins.
+            </p>
+            <p>
+                If you dont see the download button bollow then delete the previous install.
+            </p>
+            <p>
+                <a href="https://pranoysarkar.github.io/OpenPWA/">Open in APP </a>
+            </p>
+
+            <div class="controllers">
+                <div class="downloadPrompt">
+                    <div class="promptControllers">
+                        <button class="downloadButton">Download </button>
+                    </div>
+                </div>
+            </div>
+            <footer>
+            </footer>
+
+            <div class="hiddenElements">
+            </div>
+
+
         </div>
-      </nav>
-      <div class="keyword-wrap" id="keyword-wrap">
-        <div class="search-wrap">
-          <input
-            type="text"
-            class="search"
-            placeholder="Search keyword"
-            id="search"
-            v-model="search"
-            @input="search_keyword(search)"
-          />
-        </div>
-        <dl v-for="item in items" v-on:click="set_component(item.component)" class="keyword">
-          <dt class="name" :class="[target==='emoji'?'emoji':'type']">{{item.component}}</dt>
-          <dd class="description">{{(item.description)}}</dd>
-          <dd v-if="!!item.example" class="example">
-            <strong>Example</strong>
-            {{item.example}}
-          </dd>
-        </dl>
-      </div>
-    </main>
-    <footer>
-      <p id="version"></p>
-      <a class="githubLink" href="https://github.com/HyeokjaeLee/gititle">
-        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>GitHub</title>
-          <path
-            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-          />
-        </svg>
-      </a>
-      © HyeokjaeLee. All rights reserved. Powered by GitHub Pages.
-    </footer>
-    <!--script-->
+    </div>
+
+    <div class="bigFullScreen">
+
+    </div>
     <script type="text/javascript">
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register(`service-worker.js`).then(function () {
-          console.log("Service Worker Registered");
-        });
-      }
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register(`service-worker.js`)
+                .then(function () {
+                    console.log("Service Worker Registered");
+                });
+        }
     </script>
-    <script src="js/main.js"></script>
     <script defer src="js/settings.js"></script>
-    <script defer src="js/cache-handler.js"></script>
-  </body>
+    <script defer src="js/install-handler.js"></script>
+    <script defer src="js/main.js"></script>
+</body>
+
 </html>
