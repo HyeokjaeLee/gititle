@@ -2,7 +2,6 @@ window.addEventListener("load", main);
 function main() {
   vaildateCacheIfOnline().then((_) => {});
 }
-
 function vaildateCacheIfOnline() {
   return new Promise((resolve, reject) => {
     fetch(`config.json?cacheBust=${new Date().getTime()}`)
@@ -21,7 +20,6 @@ function vaildateCacheIfOnline() {
             //actually cleans the cache
             Settings.setVersion(config.version);
             window.location.reload();
-
             return resolve(); // unnecessary
           });
         } else {

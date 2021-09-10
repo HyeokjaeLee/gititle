@@ -6,6 +6,32 @@
 .space {
   margin-right: 0.3em;
 }
+
+#install-button {
+  border-radius: 5px;
+  background-color: $color2;
+  border: none;
+  margin: 0.5em;
+  padding: 0.5em;
+  position: absolute;
+  right: 0;
+  display: flex;
+  font-size: 1em;
+  transition: background-color 0.3s, color 0.2s;
+  > svg {
+    transition: fill 0.2s;
+    margin-right: 0.5em;
+    width: 1.5em;
+  }
+  &:hover {
+    color: $color2;
+    background-color: $color3;
+    > svg {
+      fill: $color2;
+    }
+  }
+}
+
 .main-nav {
   z-index: 3;
   @media screen and (max-width: 56em) {
@@ -90,7 +116,6 @@
     border: $borderLine solid $color1;
     background-color: $color1;
     color: $color2;
-    font-size: 0.9em;
     font-weight: 600;
     padding: 0.8em 1.5em;
     border-radius: 1000px;
@@ -245,19 +270,5 @@
     > svg {
       fill: darken($color2, 50%);
     }
-  }
-}
-
-#install-button {
-  padding: 0.5em;
-  right: 0;
-  position: fixed;
-  font-weight: bolder;
-  font-size: 1em;
-  border: none;
-  background-color: $color2;
-  transition: color 0.3s;
-  &:hover {
-    color: $color3;
   }
 }
