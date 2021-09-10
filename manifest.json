@@ -10,39 +10,25 @@
   "newBranch": "true",
   "icons": [
     {
-      "src": "assets/icons/icon.png",
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "48x48"
+      "purpose": "any maskable"
     },
     {
-      "src": "assets/icons/icon.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "assets/icons/icon.png",
-      "sizes": "128x128",
+      "src": "assets/icons/icon-256x256.png",
+      "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon.png",
-      "sizes": "144x144",
+      "src": "assets/icons/icon-384x384.png",
+      "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "assets/icons/icon.png",
-      "type": "image/png",
-      "sizes": "256x256"
-    },
-    {
-      "src": "assets/icons/icon.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
