@@ -1,32 +1,15 @@
 {
-  "theme_color": "#000000",
-  "background_color": "white",
-  "description": "Git commit title creation helper",
-  "display": "standalone",
+  "background_color": "purple",
+  "description": "Shows random fox pictures. Hey, at least it isn't cats.",
+  "display": "fullscreen",
   "icons": [
     {
-      "src": "assets/icon/icon-192x192.png",
+      "src": "icon/fox-icon.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "assets/icon/icon-256x256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icon/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icon/icon-512x512.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "name": "Gititle | Git commit title creation helper",
-  "short_name": "Gititle",
+  "name": "Awesome fox pictures",
+  "short_name": "Foxes",
   "start_url": "/gititle/index.html"
 }
