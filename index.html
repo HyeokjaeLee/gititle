@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
+    <link rel="manifest" href="/manifest.json" />
+    <link href="/icons/icon-192x192.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png" />
+    <link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png" />
+    <script type="module">
+      import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
+      const el = document.createElement("pwa-update");
+      document.body.appendChild(el);
+    </script>
     <title>Gititle | Github Commit Title Creation Helper</title>
+    <meta name="author" content="Hyeokjae Lee" />
+    <meta
+      name="description"
+      content="Gititle is a Github Commit Title Creation Helper. It helps you to create a commit title with a simple input."
+    />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/style/css/index.min.css" />
+    <link rel="stylesheet" href="src/style/css/style.min.css" />
   </head>
   <body>
     <header>
