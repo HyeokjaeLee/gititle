@@ -1,16 +1,18 @@
-let cacheName = "OpenGithubPWA"; // 👈 any unique name
+let cacheName = "Gititle";
 
 let filesToCache = [
-  "/gititle/", // 👈 your repository name , both slash are important
+  "/gititle/",
   "service-worker.js",
-  "js/main.js",
+  "js/cache-handler.js",
   "js/install-handler.js",
   "js/settings.js",
-  "css/main.css",
-  "assets/icons/icon.png",
+  "js/main.js",
+  "style/css/main.min.css",
+  "assets/icons/icon-192x192.png",
+  "assets/icons/icon-256x256.png",
+  "assets/icons/icon-384x384.png",
+  "assets/icons/icon-512x512.png",
   "manifest.json",
-  // add your assets here
-  // ❗️❕donot add config.json here ❗️❕
 ];
 
 self.addEventListener("install", function (event) {
