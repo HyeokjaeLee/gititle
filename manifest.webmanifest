@@ -1,5 +1,6 @@
 {
-  "background_color": "none",
+  "theme_color": "#3eaf7c",
+  "background_color": "#3eaf7c",
   "description": "Github Commit Title Creation Helper",
   "dir": "ltr",
   "display": "standalone",
@@ -8,7 +9,6 @@
   "scope": "/",
   "short_name": "Gititle",
   "start_url": "/",
-  "theme_color": "none",
   "categories": [],
   "screenshots": [],
   "icons": [
