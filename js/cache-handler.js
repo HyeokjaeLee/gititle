@@ -21,6 +21,7 @@ function vaildateCacheIfOnline() {
             //actually cleans the cache
             Settings.setVersion(config.version);
             window.location.reload();
+
             return resolve(); // unnecessary
           });
         } else {
