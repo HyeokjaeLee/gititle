@@ -249,22 +249,38 @@
 }
 
 .downloadPrompt {
-  display: none;
-  padding: 10px;
-  box-shadow: 0px 0 7px 4px #00000030;
-  justify-content: center;
-  max-width: 300px;
-  margin: auto;
-  margin-top: 60px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding: 1em;
 }
 
 .downloadButton {
-  background: #109d58;
-  color: aliceblue;
-  padding: 5px 10px;
-  min-width: 100px;
-  border-radius: 2px;
-  border: 1px solid #00723b;
-  text-transform: uppercase;
-  /* box-shadow: -10px 6px 5px 1px #109d581a; */
+  padding: 0.5em;
+  font-size: 1em;
+  display: flex;
+  background-color: $color2;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s;
+  > svg {
+    transition: fill 0.3s;
+    margin-right: 0.5em;
+    width: 1.5em;
+    fill: $color1;
+  }
+  &:hover {
+    color: $color2;
+    background-color: $color3;
+    > svg {
+      fill: $color2;
+    }
+  }
+}
+
+#version {
+  color: $color3;
 }
