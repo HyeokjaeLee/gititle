@@ -1,6 +1,6 @@
 {
-  "name": "gititle",
-  "short_name": "gititle",
+  "name": "Gititle",
+  "short_name": "Gititle",
   "start_url": "./",
   "scope": ".",
   "display": "standalone",
