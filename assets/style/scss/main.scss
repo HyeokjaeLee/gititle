@@ -249,28 +249,6 @@
 }
 
 .downloadPrompt {
-  top: 0;
-  right: 0;
-  position: absolute;
-  display: none;
-  padding: 10px;
-  justify-content: center;
-  max-width: 300px;
-  margin: auto;
-  margin-top: 60px;
-}
-
-.downloadButton {
-  background: #109d58;
-  color: aliceblue;
-  padding: 5px 10px;
-  min-width: 100px;
-  border-radius: 2px;
-  border: 1px solid #00723b;
-  text-transform: uppercase;
-}
-
-.downloadPrompt {
   display: none;
   padding: 10px;
   box-shadow: 0px 0 7px 4px #00000030;
