@@ -9,10 +9,7 @@ let filesToCache = [
   "assets/js/cache-handler.js",
   "assets/js/settings.js",
   "assets/style/css/main.min.css",
-  "assets/icon/icon-192x192.png",
-  "assets/icon/icon-256x256.png",
-  "assets/icon/icon-384x384.png",
-  "assets/icon/icon-512x512.png",
+  "assets/icon/icon.png",
   "manifest.webmanifest",
 ];
 
