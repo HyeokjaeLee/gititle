@@ -14,7 +14,6 @@ let filesToCache = [
   "assets/icon/icon-384x384.png",
   "assets/icon/icon-512x512.png",
   "manifest.webmanifest",
-  "manifest.json",
 ];
 
 self.addEventListener("install", function (event) {
