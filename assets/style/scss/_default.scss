@@ -1,6 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
+button,
+input,
+html {
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 button,
@@ -8,10 +9,11 @@ a {
   cursor: pointer;
 }
 
-button,
-input,
-html {
-  font-family: "Noto Sans KR", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 100;
 }
 
 body {
@@ -19,41 +21,12 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Noto Sans KR", sans-serif;
-  background-color: $color1;
-  color: $color2;
   min-height: 100vh;
 }
 
-html {
-  word-break: keep-all;
-}
-main {
-  flex: 1;
-}
-
-header {
-  color: $color1;
-  background-color: $color2;
-  padding-top: 4em;
-  text-align: center;
-  max-height: 30em;
-  font-weight: bolder;
-  > h1 {
-    font-size: 7em;
-    font-weight: 900;
-  }
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 0.8em;
-  font-weight: lighter;
-  padding: {
-    top: 9em;
-    bottom: 4em;
-  }
-  text-align: center;
+button,
+textarea,
+input {
+  font-size: 1em;
+  outline: none;
 }
