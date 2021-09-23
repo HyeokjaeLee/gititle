@@ -4,4 +4,9 @@ const contents = new Vue({
     emojiList: emojiList,
     typeList: typeList,
   },
+  methods: {
+    set_emoji: function (item) {
+      emoji.innerHTML = item;
+    },
+  },
 });

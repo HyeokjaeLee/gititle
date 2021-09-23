@@ -51,7 +51,7 @@
         </li>
         <li class="input-wrap commit-message">
           <div class="commit-header">
-            <span class="emoji">🎨</span> <span class="type">refactor:</span>
+            <span id="emoji">🎨</span> <span id="type">refactor:</span>
             <input type="text" class="short-summary" placeholder="short summary" id="scope" />
           </div>
           <textarea class="commit-body" placeholder="* body"></textarea>
@@ -116,7 +116,12 @@
     </div>
     <main id="contents">
       <section class="item-wrap small">
-        <dl v-for="emoji in emojiList" :id="emoji.content" class="item">
+        <dl
+          v-for="emoji in emojiList"
+          :id="emoji.content"
+          class="item"
+          v-on:click="set_emoji(emoji.content)"
+        >
           <dt class="content emoji">{{emoji.content}}</dt>
           <dd class="description">{{emoji.description}}</dd>
         </dl>

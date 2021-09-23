@@ -157,3 +157,14 @@
   margin: 1.5em;
   text-align: center;
 }
+
+#emoji,
+#type {
+  text-decoration-color: $sideBarSubBg;
+  transition: text-decoration-color $defaultSecond;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: $txt;
+  }
+}
