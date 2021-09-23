@@ -3,11 +3,17 @@
 @import "./_default.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
-.sidebar {
-  background-color: #11101c;
-  height: 100vh;
+.sidebar-wrap {
+  background-color: #21252b;
   width: 25em;
-  color: white;
+  color: $txtColor;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar {
+  flex: 1;
   list-style: none;
   padding: 0 1em;
   > li {
@@ -19,7 +25,7 @@
     a {
       display: block;
       padding: 1em;
-      background-color: #11101c;
+      background-color: #21252b;
       border: none;
       color: white;
       width: 100%;
@@ -39,7 +45,7 @@
   .sidebar-item-title {
     display: flex;
     align-items: center;
-    font-weight: 400;
+    font-weight: 300;
     svg {
       height: 1.5em;
       fill: white;
@@ -65,12 +71,12 @@
 }
 .message-wrap {
   padding: 1em 1em;
-  background-color: #1e1b31;
+  background-color: #282c34;
   input,
   textarea {
-    color: white;
+    color: $txtColor;
     border: none;
-    background-color: #1e1b31;
+    background-color: #282c34;
   }
 }
 
@@ -84,4 +90,53 @@
 
 .margin-bottom {
   margin-bottom: 0.5em;
+}
+
+.item-wrap {
+  padding: 2em 1em;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1em;
+  .item {
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 0 0.5em $txtColor;
+    }
+  }
+  &.emoji {
+    > .item {
+      border-radius: 15px;
+      width: 20em;
+      height: 5.5em;
+      display: flex;
+      overflow: hidden;
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2em;
+        font-size: 2em;
+        background-color: #262626;
+      }
+      .description {
+        padding: 0.5em;
+        color: $txtColor;
+        background-color: #3b3b3b;
+        flex: 1;
+      }
+    }
+  }
+}
+
+#contents {
+  flex: 1;
+}
+
+#version {
+  color: #3b3b3b;
+  margin: 1.5em;
+  text-align: center;
 }

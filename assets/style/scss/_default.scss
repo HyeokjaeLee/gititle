@@ -1,5 +1,6 @@
 button,
 input,
+textarea,
 html {
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -19,14 +20,31 @@ a {
 body {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-family: "Noto Sans KR", sans-serif;
-  min-height: 100vh;
+  height: 100vh;
+  background-color: #282c34;
+  white-space: keep-all;
+}
+
+main {
+  overflow: auto;
 }
 
 button,
 textarea,
 input {
+  color: white;
   font-size: 1em;
   outline: none;
+}
+
+::-webkit-scrollbar {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7e7e7e;
 }
