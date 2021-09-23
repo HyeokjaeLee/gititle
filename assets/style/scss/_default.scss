@@ -34,9 +34,14 @@ main {
 button,
 textarea,
 input {
-  color: white;
+  border: none;
+  color: $txt;
   font-size: 1em;
   outline: none;
+}
+
+textarea {
+  resize: none;
 }
 
 ::-webkit-scrollbar {
