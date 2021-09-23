@@ -67,7 +67,7 @@ const emojiList = [
     },
     { content: "👔", description: "Add or update business logic." },
   ],
-  typeList = [
+  keywordList = [
     {
       content: "Fix",
       description: "Fix incorrect something\n(bug, issue, typo)",
@@ -169,5 +169,46 @@ const emojiList = [
       content: "Pass",
       description: "Pass something\n(parameter, etc.)",
       example: "🚧 Pass: regionData to get_data",
+    },
+  ],
+  typeList = [
+    {
+      content: "build",
+      description:
+        "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)",
+    },
+    {
+      content: "ci",
+      description:
+        "Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)",
+    },
+    {
+      content: "docs",
+      description: "Documentation only changes",
+    },
+    {
+      content: "feat",
+      description: "A new feature",
+    },
+    {
+      content: "fix",
+      description: "A bug fix",
+    },
+    {
+      content: "perf",
+      description: "A code change that improves performance",
+    },
+    {
+      content: "refactor",
+      description:
+        "A code change that neither fixes a bug, improves performance nor adds a feature",
+    },
+    {
+      content: "test",
+      description: "Changes that related test",
+    },
+    {
+      content: "revert",
+      description: "Revert to previous commit",
     },
   ];

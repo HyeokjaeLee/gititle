@@ -51,11 +51,17 @@
         </li>
         <li class="input-wrap commit-message">
           <div class="commit-header">
-            <span id="emoji">🎨</span> <span id="type">refactor:</span>
-            <input type="text" class="short-summary" placeholder="short summary" id="scope" />
+            <span id="emoji" onclick="view_emoji()">🎨</span>
+            <span id="type" onclick="view_type()">refactor:</span>
+            <input
+              type="text"
+              class="short-summary"
+              placeholder="short summary"
+              onclick="view_keyword()"
+            />
           </div>
-          <textarea class="commit-body" placeholder="* body"></textarea>
-          <textarea class="commit-footer" placeholder="footer"></textarea>
+          <textarea class="commit-body" placeholder="* body" onclick="view_keyword()"></textarea>
+          <textarea class="commit-footer" placeholder="footer" onclick="view_keyword()"></textarea>
         </li>
         <li>
           <button>
@@ -115,7 +121,7 @@
       <p id="version"></p>
     </div>
     <main id="contents">
-      <section class="item-wrap small">
+      <section class="item-wrap small" id="emojiSection">
         <dl
           v-for="emoji in emojiList"
           :id="emoji.content"
@@ -126,8 +132,19 @@
           <dd class="description">{{emoji.description}}</dd>
         </dl>
       </section>
-      <section class="item-wrap small">
-        <dl v-for="type in typeList" :id="type.content" class="item">
+      <section class="item-wrap small" id="keywordSection">
+        <dl v-for="keyword in keywordList" :id="keyword.content" class="item">
+          <dt class="content keyword">{{keyword.content}}</dt>
+          <dd class="description">{{keyword.description}}</dd>
+        </dl>
+      </section>
+      <section class="item-wrap small" id="typeSection">
+        <dl
+          v-for="type in typeList"
+          :id="type.content"
+          class="item"
+          v-on:click="set_type(type.content)"
+        >
           <dt class="content type">{{type.content}}</dt>
           <dd class="description">{{type.description}}</dd>
         </dl>

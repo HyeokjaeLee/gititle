@@ -121,7 +121,7 @@
   }
   &.small {
     > .item {
-      height: 5.5em;
+      min-height: 5.5em;
       display: flex;
       .content {
         display: flex;
@@ -132,14 +132,19 @@
           width: 2em;
           font-size: 2em;
         }
-        &.type {
+        &.keyword {
           font-size: 1.2em;
           font-weight: 500;
           width: 6em;
         }
+        &.type {
+          font-size: 1.2em;
+          font-weight: 500;
+          width: 5em;
+        }
       }
       .description {
-        padding: 0.5em;
+        padding: 1em;
         color: $txt;
         background-color: #3b3b3b;
         flex: 1;
