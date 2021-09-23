@@ -3,6 +3,13 @@
 @import "./_default.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
+.title {
+  font-size: 2.2em;
+  margin: 0.5em;
+  text-align: center;
+  font-weight: 700;
+}
+
 .sidebar-wrap {
   background-color: $sideBarBg;
   width: 25em;
@@ -24,13 +31,11 @@
   flex: 1;
   list-style: none;
   padding: 0 1em;
-
   > .input-wrap {
     padding: 0 0.5em;
     background-color: $sideBarSubBg;
     textarea,
     input {
-      height: 100%;
       background-color: #282c34;
     }
     &.search {
@@ -43,12 +48,22 @@
     }
     &.commit-message {
       font-size: 1.1em;
-      height: 15em;
-    }
-    .commit-header {
+      height: 17em;
       display: flex;
-      width: 100%;
-      input {
+      flex-direction: column;
+      gap: 0.5em;
+      > .commit-header {
+        gap: 0.4em;
+        display: flex;
+        width: 100%;
+        .short-summary {
+          flex: 1;
+        }
+      }
+      > .commit-body {
+        height: 8em;
+      }
+      > .commit-footer {
         flex: 1;
       }
     }
@@ -87,6 +102,7 @@
 }
 
 .item-wrap {
+  white-space: pre-wrap;
   padding: 2em 1em;
   display: flex;
   justify-content: center;
@@ -96,24 +112,31 @@
   .item {
     transition: box-shadow 0.3s;
     cursor: pointer;
+    overflow: hidden;
+    border-radius: $borderRadius;
+    width: 20em;
     &:hover {
-      box-shadow: 0 0 0 0.5em $txt;
+      box-shadow: 0 0 0 0.5em rgba($txt, 0.1);
     }
   }
-  &.emoji {
+  &.small {
     > .item {
-      border-radius: $borderRadius;
-      width: 20em;
       height: 5.5em;
       display: flex;
-      overflow: hidden;
       .content {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 2em;
-        font-size: 2em;
         background-color: #262626;
+        &.emoji {
+          width: 2em;
+          font-size: 2em;
+        }
+        &.type {
+          font-size: 1.2em;
+          font-weight: 500;
+          width: 6em;
+        }
       }
       .description {
         padding: 0.5em;

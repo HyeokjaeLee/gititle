@@ -1,6 +1,7 @@
 const contents = new Vue({
   el: "#contents",
   data: {
-    items: emojiList,
+    emojiList: emojiList,
+    typeList: typeList,
   },
 });

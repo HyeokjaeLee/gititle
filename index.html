@@ -54,8 +54,8 @@
             <span class="emoji">🎨</span> <span class="type">refactor:</span>
             <input type="text" class="short-summary" placeholder="short summary" id="scope" />
           </div>
-          <textarea class="commit body" placeholder="* body"></textarea>
-          <textarea class="commit footer" placeholder="footer"></textarea>
+          <textarea class="commit-body" placeholder="* body"></textarea>
+          <textarea class="commit-footer" placeholder="footer"></textarea>
         </li>
         <li>
           <button>
@@ -115,10 +115,16 @@
       <p id="version"></p>
     </div>
     <main id="contents">
-      <section class="item-wrap emoji">
-        <dl v-for="item in items" :id="item" class="item">
-          <dt class="content">{{item.content}}</dt>
-          <dd class="description">{{item.description}}</dd>
+      <section class="item-wrap small">
+        <dl v-for="emoji in emojiList" :id="emoji.content" class="item">
+          <dt class="content emoji">{{emoji.content}}</dt>
+          <dd class="description">{{emoji.description}}</dd>
+        </dl>
+      </section>
+      <section class="item-wrap small">
+        <dl v-for="type in typeList" :id="type.content" class="item">
+          <dt class="content type">{{type.content}}</dt>
+          <dd class="description">{{type.description}}</dd>
         </dl>
       </section>
     </main>
