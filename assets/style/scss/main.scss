@@ -112,18 +112,35 @@
   .item {
     transition: box-shadow 0.3s;
     cursor: pointer;
-    overflow: hidden;
-    border-radius: $borderRadius;
     width: 20em;
+    border-radius: $borderRadius;
     &:hover {
       box-shadow: 0 0 0 0.5em rgba($txt, 0.1);
+      .example {
+        display: block;
+      }
+    }
+    .example {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 3;
+      display: none;
+      background-color: rgba(black, 0.8);
+      width: 100%;
+      border-radius: $borderRadius;
+      padding: 1em;
+      font-size: 0.8em;
     }
   }
   &.small {
     > .item {
+      position: relative;
       min-height: 5.5em;
       display: flex;
       .content {
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -144,6 +161,8 @@
         }
       }
       .description {
+        border-top-right-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
         padding: 1em;
         color: $txt;
         background-color: #3b3b3b;
