@@ -1,6 +1,7 @@
 const contents = new Vue({
   el: "#contents",
   data: {
+    scope: "",
     emojiList: emojiList,
     keywordList: keywordList,
     typeList: typeList,
@@ -11,6 +12,9 @@ const contents = new Vue({
     },
     set_emoji: function (item) {
       emoji.innerHTML = item;
+    },
+    set_scope: function () {
+      scope.innerHTML = this.scope;
     },
   },
 });

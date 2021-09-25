@@ -52,7 +52,7 @@
         <li class="input-wrap commit-message">
           <div class="commit-header">
             <span id="emoji" onclick="view_emoji()">🎨</span>
-            <span id="type" onclick="view_type()">refactor:</span>
+            <span id="type" onclick="view_type()">refactor<span id="scope"></span>:</span>
             <input
               type="text"
               class="short-summary"
@@ -140,6 +140,13 @@
         </dl>
       </section>
       <section class="item-wrap" id="typeSection">
+        <input
+          type="text"
+          id="scope-input"
+          placeholder="scope"
+          v-model="scope"
+          @input="set_scope(scope)"
+        />
         <dl
           v-for="type in typeList"
           :id="type.content"
