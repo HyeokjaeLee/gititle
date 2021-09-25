@@ -70,117 +70,109 @@ const emojiList = [
   keywordList = [
     {
       content: "Fix",
-      description: "Fix incorrect something\n(bug, issue, typo)",
+      description: "Fix incorrect something\n(bug, issue, etc.)",
       example:
-        "🚑️ Fix(#123): payment system\n✏️ Fix(router): typo\n🔒️ Fix(#321): authentication features\n🐛 Fix: crash when removing root nodes",
+        "fix changelog entry\nfix calculation in process.uptime( )\nfix crash when removing root nodes",
     },
     {
       content: "Correct",
-      description: "Correct something\n(grammatical error, types, name) ",
-      example: "📝 Correct: grammatical error\n🏷️ Correct: parameters, return types in get_data",
+      description: "Correct something\n(grammatical error, types, name, typo, etc.) ",
+      example: "correct typo in worker.js",
     },
     {
       content: "Remove",
       description: "Remove code or files",
-      example:
-        "⚰️ Remove: unused variable\n 🔥 Remove: unused files\n ➖ Remove: axios from dependencies",
+      example: "\n\n",
     },
     {
       content: "Add",
       description: "Add new code or files",
       example:
-        "✅ Add: test for InterpolatorType\n 🚸 Add: displayName to ActivityIndicator\n 🍱 Add: region data\n 🏷️ Add(COVID19): undefined type to region",
+        "add json_update( )\nadd test for InterpolatorType\nadd displayName to ActivityIndicator",
     },
     {
       content: "Implement",
       description: "Implement someting\n(Add a bigger code than 'Add')",
-      example:
-        "✨ Implement: tag search feature\n♻️ Implement: data storage to collect information",
+      example: "\n\n",
     },
     {
       content: "Use",
       description: "Use someting to implement",
-      example: "💥 Use: react.js instead vue.js\n🎨 Use: ES5 to support IE",
+      example: "\n\n",
     },
     {
       content: "Refactor",
       description: "Refactor code\n(coupling⬇️, cohesion⬆️)",
-      example:
-        "♻️ Refactor(head): region data import\n 🎨 Refactor(crawler): get_new_page method\n ♻️ Refactor(Navi): life cycle management",
+      example: "\n\n",
     },
     {
       content: "Simplify",
       description: "Simplify code\n(weaker than refactor)",
-      example: "♻️ Simplify(router): variables\n♻️ Simplify: heap space iteration",
+      example: "\n\n",
     },
     {
       content: "Update",
       description: "Update or supplement code",
-      example:
-        "⬆️ Update: immer to 9.0.6\n⬇️ Update: immer to 9.0.2\n📌 Update: immer to 9.0.4\n 👽️ Update: get_API( )\n 📸 Update: snapshot to introduce new feature\n🍱 Update: region data",
+      example: "\n\n",
     },
     //향상이 있을때
     {
       content: "Improve",
       description: "Improve something",
-      example:
-        "⚡️ Improve(crawling): get_data method\n 🚸 Improve: searching UI\n 🔍️ Improve: domain management",
+      example: "\n\n",
     },
     {
       content: "Make",
       description: "Make existing something difference",
-      example: "🗃️ Make(dataList): region data read-only",
+      example: "\n\n",
     },
     {
       content: "Revise",
       description: "Update or supplement Document",
-      example: "📝 Revise: guideline",
+      example: "\n\n",
     },
     {
       content: "Ensure",
       description: "Ensure specific operation",
-      example:
-        "🚸 Ensure: silent mode in morning\n🎨 Ensure(get_query): return type to string\n🎨 Ensure: options.flag defaults to 'r' in readFile",
+      example: "\n\n",
     },
     {
       content: "Prevent",
       description: "Prevent specific processing",
-      example: "🩹 Prevent(get_data): unintended execution",
+      example: "\n\n",
     },
     {
       content: "Avoid",
       description: "Avoid specific processing\n('if' statement, etc)",
-      example: "🩹 Avoid(get_data): unintended execution",
+      example: "\n\n",
     },
-    { content: "Move", description: "Move something", example: "" },
-    { content: "Rename", description: "Rename something", example: "" },
-    { content: "Allow", description: "Allow something", example: "" },
+    { content: "Move", description: "Move something", example: "\n\n" },
+    { content: "Rename", description: "Rename something", example: "\n\n" },
+    { content: "Allow", description: "Allow something", example: "\n\n" },
     {
       content: "Verify",
       description: "Verify something",
-      example: "⚗️ Verify(get_query): parameter type",
+      example: "\n\n",
     },
     {
       content: "Set",
       description: "Change small things\n(variable values, etc.)",
-      example: "🚸 Set: contentsPerPage to 6",
+      example: "\n\n",
     },
     {
       content: "Pass",
       description: "Pass something\n(parameter, etc.)",
-      example: "🚧 Pass: regionData to get_data",
+      example: "\n\n",
     },
   ],
   typeList = [
     {
       content: "build",
-      description:
-        "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)",
+      description: "Changes that affect the build system or external dependencies",
     },
     {
       content: "ci",
-      description:
-        "Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)",
+      description: "Changes to our CI configuration files and scripts",
     },
     {
       content: "docs",
