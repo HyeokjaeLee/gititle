@@ -36,10 +36,10 @@
     <link rel="stylesheet" href="assets/style/css/main.min.css" />
     <title>Gititle</title>
   </head>
-
   <body>
     <div class="sidebar-wrap">
-      <h1 class="title">Gititle</h1>
+      <h1 class="site-title">Gititle</h1>
+      <p class="site-description">Git commit title creation helper</p>
       <ul class="sidebar">
         <li class="input-wrap search">
           <svg viewBox="0 0 24 24" class="sidebar-icon">
@@ -121,29 +121,29 @@
       <p id="version"></p>
     </div>
     <main id="contents">
-      <section class="item-wrap small" id="emojiSection">
+      <section class="item-wrap" id="emojiSection">
         <dl
           v-for="emoji in emojiList"
           :id="emoji.content"
-          class="item"
+          class="item small"
           v-on:click="set_emoji(emoji.content)"
         >
           <dt class="content emoji">{{emoji.content}}</dt>
           <dd class="description">{{emoji.description}}</dd>
         </dl>
       </section>
-      <section class="item-wrap small" id="keywordSection">
-        <dl v-for="keyword in keywordList" :id="keyword.content" class="item">
+      <section class="item-wrap" id="keywordSection">
+        <dl v-for="keyword in keywordList" :id="keyword.content" class="item medium">
           <dt class="content keyword">{{keyword.content}}</dt>
           <dd class="description">{{keyword.description}}</dd>
           <dd class="example">{{keyword.example}}</dd>
         </dl>
       </section>
-      <section class="item-wrap small" id="typeSection">
+      <section class="item-wrap" id="typeSection">
         <dl
           v-for="type in typeList"
           :id="type.content"
-          class="item"
+          class="item large"
           v-on:click="set_type(type.content)"
         >
           <dt class="content type">{{type.content}}</dt>
