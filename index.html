@@ -36,22 +36,73 @@
     <link rel="stylesheet" href="assets/style/css/main.min.css" />
     <title>Gititle</title>
   </head>
-
   <body>
-    <div class="controllers">
-      <div class="downloadPrompt">
-        <div class="promptControllers">
-          <button class="downloadButton">
+    <div class="sidebar-wrap">
+      <h1 class="site-title">Gititle</h1>
+      <p class="site-description">Git commit title creation helper</p>
+      <ul class="sidebar">
+        <li class="input-wrap search">
+          <svg viewBox="0 0 24 24" class="sidebar-icon">
+            <path
+              d="m16 6a1 1 0 0 1 0 2h-8a1 1 0 0 1 0-2zm7.707 17.707a1 1 0 0 1 -1.414 0l-2.407-2.407a4.457 4.457 0 0 1 -2.386.7 4.5 4.5 0 1 1 4.5-4.5 4.457 4.457 0 0 1 -.7 2.386l2.407 2.407a1 1 0 0 1 0 1.414zm-6.207-3.707a2.5 2.5 0 1 0 -2.5-2.5 2.5 2.5 0 0 0 2.5 2.5zm-4.5 2h-6a3 3 0 0 1 -3-3v-14a3 3 0 0 1 3-3h12a1 1 0 0 1 1 1v8a1 1 0 0 0 2 0v-8a3 3 0 0 0 -3-3h-12a5.006 5.006 0 0 0 -5 5v14a5.006 5.006 0 0 0 5 5h6a1 1 0 0 0 0-2z"
+            />
+          </svg>
+          <input type="text" placeholder="Search..." id="search" />
+        </li>
+        <li class="input-wrap commit-message">
+          <div class="commit-header">
+            <span id="emoji" onclick="view_emoji()">🎨</span>
+            <span id="type" onclick="view_type()">refactor:</span>
+            <input
+              type="text"
+              class="short-summary"
+              placeholder="short summary"
+              onclick="view_keyword()"
+            />
+          </div>
+          <textarea class="commit-body" placeholder="* body" onclick="view_keyword()"></textarea>
+          <textarea class="commit-footer" placeholder="footer" onclick="view_keyword()"></textarea>
+        </li>
+        <li>
+          <button>
+            <svg viewBox="0 0 24 24" class="sidebar-icon">
+              <path
+                d="m13 20a5.006 5.006 0 0 0 5-5v-8.757a3.972 3.972 0 0 0 -1.172-2.829l-2.242-2.242a3.972 3.972 0 0 0 -2.829-1.172h-4.757a5.006 5.006 0 0 0 -5 5v10a5.006 5.006 0 0 0 5 5zm-9-5v-10a3 3 0 0 1 3-3s4.919.014 5 .024v1.976a2 2 0 0 0 2 2h1.976c.01.081.024 9 .024 9a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3-3zm18-7v11a5.006 5.006 0 0 1 -5 5h-9a1 1 0 0 1 0-2h9a3 3 0 0 0 3-3v-11a1 1 0 0 1 2 0z"
+              /></svg
+            >Copy
+          </button>
+        </li>
+        <li>
+          <button>
+            <svg viewBox="0 0 24 24" class="sidebar-icon">
+              <path
+                d="m23 11a1 1 0 0 0 -1 1 10.034 10.034 0 1 1 -2.9-7.021.862.862 0 0 1 -.1.021h-3a1 1 0 0 0 0 2h3a3 3 0 0 0 3-3v-3a1 1 0 0 0 -2 0v2.065a11.994 11.994 0 1 0 4 8.935 1 1 0 0 0 -1-1z"
+              />
+              <path
+                d="m12 6a1 1 0 0 0 -1 1v5a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414l-2.707-2.707v-4.586a1 1 0 0 0 -1-1z"
+              /></svg
+            >Recent copied message
+          </button>
+        </li>
+        <li>
+          <a>
             <svg
-              version="1.1"
+              role="img"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 1000 1000"
-              enable-background="new 0 0 1000 1000"
-              xml:space="preserve"
+              class="sidebar-icon"
             >
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+            GitHub
+          </a>
+        </li>
+        <li class="downloadPrompt">
+          <button class="downloadButton">
+            <svg version="1.1" viewBox="0 0 1000 1000" class="sidebar-icon">
               <g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)">
                 <path
                   d="M4387,4490.9C2970.8,4309.4,1660.5,3487,892.3,2301.6C79.2,1043.2-118.7-476.7,347.9-1893c221.5-674,551.4-1237.2,1051-1793.3c181.5-202.7,530.2-513.8,626.8-556.2c238-106,525.5,82.5,523.2,344.1c-2.3,58.9-14.1,132-30.6,160.2c-16.5,25.9-169.7,183.8-341.7,348.8c-591.5,565.6-954.4,1157.1-1166.5,1897C899.3-1108.3,866.3-853.8,866.3-373C864,98.3,882.8,260.8,986.5,663.8C1337.7,2035.4,2358,3119.4,3710.7,3562.4c487.8,157.9,695.2,188.5,1300.8,188.5c556.2,0,728.2-21.2,1154.7-146.1c1449.3-419.5,2563.9-1619,2884.5-3106c212.1-978,54.2-2024.3-436-2891.5c-233.3-414.7-492.5-732.9-900.2-1100.5c-242.7-221.5-287.5-287.5-287.5-414.7c0-256.9,233.3-438.3,473.7-367.6c108.4,33,313.4,195.6,575,459.5c784.7,787.1,1289,1859.3,1402.2,2981c99,996.8-136.7,2066.7-648.1,2936.3c-761.2,1293.8-2076.1,2170.4-3565.5,2377.8C5379.2,4519.2,4660.4,4526.2,4387,4490.9z"
@@ -65,95 +116,41 @@
             </svg>
             Install Gititle
           </button>
-        </div>
-      </div>
-    </div>
-    <header>
-      <h1>Gititle</h1>
-      <p>Github Commit Title Creation Helper</p>
-    </header>
-    <main>
-      <nav class="main-nav">
-        <div class="nav-item-wrap">
-          <button
-            class="button log"
-            id="copied-log"
-            onclick="set_log_list()"
-            :class="[open?'show':'']"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 26 26"
-              enable-background="new 0 0 26 26"
-              height="1em"
-            >
-              <path
-                d="M 13 0 L 8 3 L 13 6 L 13 4 C 17.954545 4 22 8.0454545 22 13 C 22 17.954545 17.954545 22 13 22 C 8.0454545 22 4 17.954545 4 13 C 4 10.546914 4.883324 8.429176 6.5 6.8125 L 5.09375 5.40625 C 3.110426 7.389574 2 10.053086 2 13 C 2 19.045455 6.9545455 24 13 24 C 19.045455 24 24 19.045455 24 13 C 24 6.9545455 19.045455 2 13 2 L 13 0 z M 10.90625 6.5625 L 9.09375 7.4375 L 11.625 12.4375 C 11.556134 12.609661 11.5 12.803249 11.5 13 C 11.5 13.020506 11.499185 13.042194 11.5 13.0625 L 8.28125 16.28125 L 9.71875 17.71875 L 12.9375 14.5 C 12.957806 14.500815 12.979494 14.5 13 14.5 C 13.828427 14.5 14.5 13.828427 14.5 13 C 14.5 12.309644 14.04112 11.737133 13.40625 11.5625 L 10.90625 6.5625 z"
-              />
-            </svg>
-            <ul class="log-list">
-              <li class="static-txt">Recent copied titles</li>
-              <li v-for="title in history">
-                <a v-on:click="get_history(title)"
-                  >{{`${title.emoji} ${title.type+title.scope}: ${title.subject}`}}</a
-                >
-              </li>
-            </ul>
-          </button>
-          <div class="result-area" id="result-text">
-            <span class="space" id="emoji">{{emoji}}</span>
-            <span id="type">{{type}}</span>
-            <span>(</span>
-            <input type="text" class="scope-area" placeholder="#000" id="scope" />
-            <span>)</span>
-            <span class="space">:</span>
-            <input
-              type="text"
-              class="subject-area"
-              id="subject"
-              placeholder="your commit message title"
-            />
-          </div>
-          <button class="button copy" onclick="copy_txt()">Copy</button>
-          <span
-            ><button class="button emoji" onclick="change2emoji()">Emoji</button
-            ><button class="button type" onclick="change2type()">Type</button></span
-          >
-        </div>
-      </nav>
-      <div class="keyword-wrap" id="keyword-wrap">
-        <div class="search-wrap">
-          <input
-            type="text"
-            class="search"
-            placeholder="Search keyword"
-            id="search"
-            v-model="search"
-            @input="search_keyword(search)"
-          />
-        </div>
-        <dl v-for="item in items" v-on:click="set_component(item.component)" class="keyword">
-          <dt class="name" :class="[target==='emoji'?'emoji':'type']">{{item.component}}</dt>
-          <dd class="description">{{(item.description)}}</dd>
-          <dd v-if="!!item.example" class="example">
-            <strong>Example</strong>
-            {{item.example}}
-          </dd>
-        </dl>
-      </div>
-    </main>
-    <footer>
-      <a class="githubLink" href="https://github.com/HyeokjaeLee/gititle">
-        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>GitHub</title>
-          <path
-            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-          />
-        </svg>
-      </a>
-      © HyeokjaeLee. All rights reserved. Powered by GitHub Pages.
+        </li>
+      </ul>
       <p id="version"></p>
-    </footer>
+    </div>
+    <main id="contents">
+      <section class="item-wrap" id="emojiSection">
+        <dl
+          v-for="emoji in emojiList"
+          :id="emoji.content"
+          class="item small"
+          v-on:click="set_emoji(emoji.content)"
+        >
+          <dt class="content emoji">{{emoji.content}}</dt>
+          <dd class="description">{{emoji.description}}</dd>
+        </dl>
+      </section>
+      <section class="item-wrap" id="keywordSection">
+        <dl v-for="keyword in keywordList" :id="keyword.content" class="item medium">
+          <dt class="content keyword">{{keyword.content}}</dt>
+          <dd class="description">{{keyword.description}}</dd>
+          <dd class="example">{{keyword.example}}</dd>
+        </dl>
+      </section>
+      <section class="item-wrap" id="typeSection">
+        <dl
+          v-for="type in typeList"
+          :id="type.content"
+          class="item large"
+          v-on:click="set_type(type.content)"
+        >
+          <dt class="content type">{{type.content}}</dt>
+          <dd class="description">{{type.description}}</dd>
+        </dl>
+      </section>
+    </main>
     <script type="text/javascript">
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register(`service-worker.js`).then(function () {
