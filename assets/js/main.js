@@ -14,10 +14,37 @@ const contents = new Vue({
       emoji.innerHTML = item;
     },
     set_scope: function () {
-      scope.innerHTML = this.scope;
+      !!this.scope ? (scope.innerHTML = `(${this.scope})`) : (scope.innerHTML = "");
     },
   },
 });
+
+const get_commit_items = () => ({
+  emoji: emoji.innerHTML,
+  type: type.innerHTML,
+  scope: scope.innerHTML,
+  shortSummary: shortSummary.value,
+  body: commitBody.value,
+  footer: commitFooter.value,
+});
+
+function copy_message(commitItems) {
+  let { emoji, type, scope, shortSummary, body, footer } = commitItems;
+  const header = `${emoji} ${type + scope}: ${shortSummary}`;
+  body = !!body ? `\n\n${body}` : "";
+  footer = !!footer ? `\n\n${footer}` : "";
+  const temp4copy = document.createElement("textarea");
+  temp4copy.value = header + body + footer;
+  document.body.appendChild(temp4copy);
+  temp4copy.select();
+  document.execCommand("copy");
+  document.body.removeChild(temp4copy);
+}
+
+function test() {
+  const commitItems = get_commit_items();
+  copy_message(commitItems);
+}
 
 function view_keyword() {
   hide_all();
