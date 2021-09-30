@@ -65,7 +65,9 @@
           flex: 1;
         }
         #emoji,
-        #type {
+        #type,
+        #scope {
+          white-space: nowrap;
           text-decoration-color: $sideBarSubBg;
           transition: text-decoration-color $defaultSecond;
           cursor: pointer;
@@ -80,7 +82,7 @@
         }
       }
       > #commitBody {
-        height: 8em;
+        height: 9em;
       }
       > #commitFooter {
         flex: 1;
@@ -201,7 +203,7 @@
 }
 
 #version {
-  color: #3b3b3b;
+  color: $descriptionBg;
   margin: 1.5em;
   text-align: center;
 }
@@ -218,7 +220,7 @@
   font-weight: 500;
 }
 
-.notification {
+#notification {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -228,4 +230,15 @@
   color: $contentBg;
   font-weight: 400;
   border-radius: $borderRadius;
+  &.default {
+    display: none;
+  }
+
+  &.show {
+    @include fadeInRight(0.5s);
+  }
+
+  &.hide {
+    @include fadeOutRight(0.5s);
+  }
 }

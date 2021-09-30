@@ -41,9 +41,17 @@ function copy_message(commitItems) {
   document.body.removeChild(temp4copy);
 }
 
-function test() {
+function copy_button() {
   const commitItems = get_commit_items();
   copy_message(commitItems);
+  view_notification();
+}
+
+function view_notification() {
+  notification.setAttribute("class", "show");
+  setTimeout(() => {
+    notification.setAttribute("class", "hide");
+  }, 3000);
 }
 
 function view_keyword() {
