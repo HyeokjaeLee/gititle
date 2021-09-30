@@ -18,6 +18,7 @@
 }
 .sidebar-wrap {
   background-color: $sideBarBg;
+  min-width: 25em;
   width: 25em;
   color: $txt;
   min-height: 100vh;
@@ -58,17 +59,32 @@
       flex-direction: column;
       gap: 0.5em;
       > .commit-header {
-        gap: 0.4em;
         display: flex;
         width: 100%;
-        .short-summary {
+        #shortSummary {
           flex: 1;
         }
+        #emoji,
+        #type,
+        #scope {
+          white-space: nowrap;
+          text-decoration-color: $sideBarSubBg;
+          transition: text-decoration-color $defaultSecond;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: $txt;
+          }
+        }
+        #type,
+        #shortSummary {
+          margin-left: 0.4em;
+        }
       }
-      > .commit-body {
-        height: 8em;
+      > #commitBody {
+        height: 9em;
       }
-      > .commit-footer {
+      > #commitFooter {
         flex: 1;
       }
     }
@@ -110,9 +126,9 @@
   white-space: pre-wrap;
   padding: 3em;
   display: flex;
-  margin: 0 auto;
   flex-wrap: wrap;
   gap: 1em;
+  justify-content: center;
 }
 
 .item {
@@ -183,21 +199,46 @@
 
 #contents {
   flex: 1;
+  min-width: 30em;
 }
 
 #version {
-  color: #3b3b3b;
+  color: $descriptionBg;
   margin: 1.5em;
   text-align: center;
 }
 
-#emoji,
-#type {
-  text-decoration-color: $sideBarSubBg;
-  transition: text-decoration-color $defaultSecond;
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: $txt;
+#scope-input {
+  width: 20em;
+  background-color: $txt;
+  color: $contentBg;
+  font-size: 1.2em;
+  border: 5px solid $txt;
+  border-radius: 50em;
+  padding: 1em;
+  margin: 1em;
+  font-weight: 500;
+}
+
+#notification {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 2em;
+  padding: 1em;
+  background-color: rgba($txt, 0.9);
+  color: $contentBg;
+  font-weight: 400;
+  border-radius: $borderRadius;
+  &.default {
+    display: none;
+  }
+
+  &.show {
+    @include fadeInRight(0.5s);
+  }
+
+  &.hide {
+    @include fadeOutRight(0.5s);
   }
 }

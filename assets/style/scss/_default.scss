@@ -23,7 +23,7 @@ body {
   flex-direction: row;
   font-family: "Noto Sans KR", sans-serif;
   height: 100vh;
-  background-color: #282c34;
+  background-color: $sideBarSubBg;
   color: $txt;
 }
 
@@ -52,4 +52,10 @@ textarea {
 
 ::-webkit-scrollbar-thumb {
   background-color: #7e7e7e;
+}
+
+footer {
+  text-align: center;
+  margin: 5em 0;
+  color: $descriptionBg;
 }
