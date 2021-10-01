@@ -8,7 +8,7 @@ const contents = new Vue({
   },
   methods: {
     set_type: function (item) {
-      type.innerHTML = item + ":";
+      type.innerHTML = item;
     },
     set_emoji: function (item) {
       emoji.innerHTML = item;
