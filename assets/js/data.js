@@ -72,97 +72,128 @@ const emojiList = [
       content: "Fix",
       description: "Fix incorrect something\n(bug, issue, etc.)",
       example:
-        "fix changelog entry\nfix calculation in process.uptime( )\nfix crash when removing root nodes",
+        "* fix changelog entry\n* fix calculation in process.uptime()\n* fix crash when removing root nodes",
     },
     {
       content: "Correct",
       description: "Correct something\n(grammatical error, types, name, typo, etc.) ",
-      example: "correct typo in worker.js",
+      example:
+        "* correct typo in worker.js\n* correct grammatical error in BUILDING.md\n* correct async_hooks resource names",
     },
     {
       content: "Remove",
       description: "Remove code or files",
-      example: "\n\n",
+      example:
+        "* remove unused variable\n* remove absolute path parameter from transformers\n* remove duplicated buffer negative allocation test",
     },
     {
       content: "Add",
       description: "Add new code or files",
       example:
-        "add json_update( )\nadd test for InterpolatorType\nadd displayName to ActivityIndicator",
+        "* add json_update()\n* add test for InterpolatorType\n* add displayName to ActivityIndicator",
     },
     {
       content: "Implement",
       description: "Implement someting\n(Add a bigger code than 'Add')",
-      example: "\n\n",
+      example:
+        "* implement Image.defaultSource\n* implement date object\n* implement sub-nav in main page to improve UX",
     },
     {
       content: "Use",
       description: "Use someting to implement",
-      example: "\n\n",
+      example:
+        "* use object writer for thrown errors\n* use common operations to define browser globals\n* use babel runtime instead of relying on global babelHelpers and regenerator",
     },
     {
       content: "Refactor",
       description: "Refactor code\n(coupling⬇️, cohesion⬆️)",
-      example: "\n\n",
+      example:
+        "* refactor QueryWrap lifetime management\n* refactor thread life cycle management\n* refactor MockNativeMethods in Jest",
     },
     {
       content: "Simplify",
       description: "Simplify code\n(weaker than refactor)",
-      example: "\n\n",
+      example:
+        "* simplify code and remove obsolete checks\n* simplify get_json()\n* simplify loop arithmetic in GetCPUInfo",
     },
     {
       content: "Update",
       description: "Update or supplement code",
-      example: "\n\n",
+      example:
+        "* update ansi-html to 0.0.7\n* update repo docs to use HTTPS\n* update babelHelpers with Babel 7 support",
     },
     //향상이 있을때
     {
       content: "Improve",
       description: "Improve something",
-      example: "\n\n",
+      example:
+        "* improve Unicode handling\n* improve performance of json_parsor()\n* improve Accessibility",
     },
     {
       content: "Make",
       description: "Make existing something difference",
-      example: "\n\n",
+      example:
+        "* make 'floating patch' message informational\n* make config object read-only\n* make IsolateData store ArrayBufferAllocator",
     },
     {
       content: "Revise",
       description: "Update or supplement Document",
-      example: "\n\n",
+      example:
+        "* revise deprecation semverness info in Collaborator Guide\n* revise README.md\n* revise post-3",
     },
     {
       content: "Ensure",
       description: "Ensure specific operation",
-      example: "\n\n",
+      example:
+        "* ensure quiet always takes precedence\n* ensure require.main for CJS top-level loads\n* ensure options.flag defaults to 'r' in readFile",
     },
     {
       content: "Prevent",
       description: "Prevent specific processing",
-      example: "\n\n",
+      example:
+        "* prevent constructing console methods\n* prevent a potential error in event handling if Object.prototype is extended\n* prevent event handlers from receiving extra argument in development.",
     },
     {
       content: "Avoid",
       description: "Avoid specific processing\n('if' statement, etc)",
-      example: "\n\n",
+      example:
+        "* avoid race condition in OnHeaderCallback\n* avoid importing entire crypto dependency tree if not in Node.js\n* avoid double reload event when reloading JS",
     },
-    { content: "Move", description: "Move something", example: "\n\n" },
-    { content: "Rename", description: "Rename something", example: "\n\n" },
-    { content: "Allow", description: "Allow something", example: "\n\n" },
+    {
+      content: "Move",
+      description: "Move something",
+      example:
+        "* move test-process-uptime to parallel\n* move async hooks trace events setup to pre_execution.js\n* move initialization of node-report into pre_execution.js",
+    },
+    {
+      content: "Rename",
+      description: "Rename something",
+      example:
+        "* rename node-report to report\n* rename location to trigger\n* rename main.js to index.js",
+    },
+    {
+      content: "Allow",
+      description: "Allow something",
+      example:
+        "* allow the output filename to be a {Function}\n* allow Node.js-like runtimes to identify as Node.js as well\n* allow CORS",
+    },
     {
       content: "Verify",
       description: "Verify something",
-      example: "\n\n",
+      example:
+        "* verify heap buffer allocations occur\n* verify cache storage\n* verify common tensorflow model",
     },
     {
       content: "Set",
       description: "Change small things\n(variable values, etc.)",
-      example: "\n\n",
+      example:
+        "* set tls.DEFAULT_ECDH_CURVE to 'auto'\n*set defaultIndex to 2\n* set perPage to 10",
     },
     {
       content: "Pass",
       description: "Pass something\n(parameter, etc.)",
-      example: "\n\n",
+      example:
+        "* pass the response toolkit to the context function\n* pass covid19-object to classify_region()\n* pass querystring to search()",
     },
   ],
   typeList = [
