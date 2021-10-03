@@ -1,6 +1,9 @@
 const contents = new Vue({
   el: "#contents",
   data: {
+    copiedLogList: !!localStorage.getItem("gititleCopiedLog")
+      ? JSON.parse(localStorage.getItem("gititleCopiedLog"))
+      : [],
     scope: "",
     emojiList: emojiList,
     keywordList: keywordList,
@@ -16,16 +19,15 @@ const contents = new Vue({
     set_scope: function () {
       !!this.scope ? (scope.innerHTML = `(${this.scope})`) : (scope.innerHTML = "");
     },
+    set_from_log(commitItems) {
+      emoji.innerHTML = commitItems.emoji;
+      type.innerHTML = commitItems.type;
+      scope.innerHTML = commitItems.scope;
+      shortSummary.value = commitItems.shortSummary;
+      commitBody.value = commitItems.body;
+      commitFooter.value = commitItems.footer;
+    },
   },
-});
-
-const get_commit_items = () => ({
-  emoji: emoji.innerHTML,
-  type: type.innerHTML,
-  scope: scope.innerHTML,
-  shortSummary: shortSummary.value,
-  body: commitBody.value,
-  footer: commitFooter.value,
 });
 
 function copy_message(commitItems) {
@@ -40,10 +42,26 @@ function copy_message(commitItems) {
   document.execCommand("copy");
   document.body.removeChild(temp4copy);
 }
+/*복사 내역을 로컬 스토리지에 저장*/
+function save_log2local(commitItems) {
+  contents.copiedLogList.push(commitItems);
+  if (contents.copiedLogList.length > 15) {
+    contents.copiedLogList.shift();
+  }
+  localStorage.setItem("gititleCopiedLog", JSON.stringify(contents.copiedLogList));
+}
 
 function copy_button() {
-  const commitItems = get_commit_items();
+  const commitItems = {
+    emoji: emoji.innerHTML,
+    type: type.innerHTML,
+    scope: scope.innerHTML,
+    shortSummary: shortSummary.value,
+    body: commitBody.value,
+    footer: commitFooter.value,
+  };
   copy_message(commitItems);
+  save_log2local(commitItems);
   view_notification();
 }
 
@@ -69,10 +87,17 @@ function view_emoji() {
   emojiSection.removeAttribute("style");
 }
 
+function view_log() {
+  hide_all();
+  logSection.removeAttribute("style");
+}
+
 function hide_all() {
   keywordSection.setAttribute("style", "display:none");
   emojiSection.setAttribute("style", "display:none");
   typeSection.setAttribute("style", "display:none");
+  logSection.setAttribute("style", "display:none");
 }
 keywordSection.setAttribute("style", "display:none");
 typeSection.setAttribute("style", "display:none");
+logSection.setAttribute("style", "display:none");

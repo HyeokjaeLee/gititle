@@ -82,7 +82,7 @@
           </button>
         </li>
         <li>
-          <button>
+          <button onclick="view_log()">
             <svg viewBox="0 0 24 24" class="sidebar-icon">
               <path
                 d="m23 11a1 1 0 0 0 -1 1 10.034 10.034 0 1 1 -2.9-7.021.862.862 0 0 1 -.1.021h-3a1 1 0 0 0 0 2h3a3 3 0 0 0 3-3v-3a1 1 0 0 0 -2 0v2.065a11.994 11.994 0 1 0 4 8.935 1 1 0 0 0 -1-1z"
@@ -90,7 +90,7 @@
               <path
                 d="m12 6a1 1 0 0 0 -1 1v5a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414l-2.707-2.707v-4.586a1 1 0 0 0 -1-1z"
               /></svg
-            >Recent copied (not ready)
+            >Recent copied commits
           </button>
         </li>
         <li>
@@ -131,18 +131,13 @@
     </div>
     <main id="contents">
       <section class="item-wrap" id="emojiSection">
-        <dl
-          v-for="emoji in emojiList"
-          :id="emoji.content"
-          class="item small"
-          v-on:click="set_emoji(emoji.content)"
-        >
+        <dl v-for="emoji in emojiList" class="item small" v-on:click="set_emoji(emoji.content)">
           <dt class="content emoji">{{emoji.content}}</dt>
           <dd class="description">{{emoji.description}}</dd>
         </dl>
       </section>
       <section class="item-wrap" id="keywordSection">
-        <dl v-for="keyword in keywordList" :id="keyword.content" class="item medium">
+        <dl v-for="keyword in keywordList" class="item medium">
           <dt class="content keyword">{{keyword.content}}</dt>
           <dd class="description">{{keyword.description}}</dd>
           <dd class="example">{{keyword.example}}</dd>
@@ -156,15 +151,23 @@
           v-model="scope"
           @input="set_scope(scope)"
         />
-        <dl
-          v-for="type in typeList"
-          :id="type.content"
-          class="item large"
-          v-on:click="set_type(type.content)"
-        >
+        <dl v-for="type in typeList" class="item large" v-on:click="set_type(type.content)">
           <dt class="content type">{{type.content}}</dt>
           <dd class="description">{{type.description}}</dd>
         </dl>
+      </section>
+      <section class="item-wrap" id="logSection">
+        <article
+          v-for="copiedLog in copiedLogList"
+          class="item medium log"
+          v-on:click="set_from_log(copiedLog)"
+        >
+          <h4>
+            {{`${copiedLog.emoji} ${copiedLog.type+copiedLog.scope}: ${copiedLog.shortSummary}`}}
+          </h4>
+          <p>{{copiedLog.body}}</p>
+          <p>{{copiedLog.footer}}</p>
+        </article>
       </section>
       <footer>© HyeokjaeLee. All rights reserved. Powered by GitHub Pages.</footer>
     </main>

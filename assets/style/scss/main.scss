@@ -145,7 +145,7 @@
     }
   }
   &.small {
-    width: 25em;
+    width: 20em;
   }
   &.medium {
     width: 30em;
@@ -182,9 +182,6 @@
     padding: 0.5em 1em;
     flex: 1;
   }
-  &.small {
-    width: 20em;
-  }
   .example {
     font-size: 0.8em;
     padding: 1em 1em;
@@ -194,6 +191,18 @@
     background-color: rgba($sideBarBg, 0.95);
     position: absolute;
     display: none;
+  }
+  &.log {
+    background-color: $descriptionBg;
+    padding: 0.5em;
+    flex-direction: column;
+    gap: 1em;
+    > h4 {
+      font-weight: 500;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 }
 
