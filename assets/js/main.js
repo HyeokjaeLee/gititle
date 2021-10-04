@@ -6,7 +6,7 @@ const sidebar = new Vue({
   methods: {
     search: function () {
       if (this.searchKeyword.length > 0) {
-        searchResults.setAttribute("style", "display:flex");
+        searchResults.setAttribute("style", "display:block");
         contents.searchedItems.emoji = filter_items(contents.emojiList, this.searchKeyword);
         contents.searchedItems.type = filter_items(contents.typeList, this.searchKeyword);
         contents.searchedItems.keyword = filter_items(contents.keywordList, this.searchKeyword);

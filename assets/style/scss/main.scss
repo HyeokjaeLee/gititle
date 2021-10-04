@@ -17,6 +17,7 @@
   margin-bottom: 0.3em;
 }
 .sidebar-wrap {
+  z-index: 3;
   background-color: $sideBarBg;
   min-width: 25em;
   width: 25em;
@@ -128,24 +129,6 @@
   flex-wrap: wrap;
   gap: 1em;
   justify-content: center;
-  &.search-result {
-    padding: 1em;
-    .item {
-      min-height: auto;
-      .description {
-        background-color: $sideBarSubBg;
-        padding: 0.5em;
-      }
-      .content {
-        background-color: $sideBarSubBg;
-        padding: {
-          left: 1em;
-          right: 0.5em;
-        }
-        font-size: 1.2em;
-      }
-    }
-  }
 }
 
 .item {
@@ -274,11 +257,40 @@
 }
 
 #searchResults {
+  @include fadeInLeft(0.2s);
   display: none;
   position: fixed;
   background-color: rgba($sideBarBg, 0.95);
   width: 40em;
   height: 100vh;
   overflow-y: scroll;
-  z-index: 3;
+  z-index: 2;
+
+  .searched-item {
+    gap: 0.6em;
+    display: flex;
+    border-radius: $borderRadius;
+    padding: 0.4em;
+    margin: {
+      top: 0.3em;
+      bottom: 0.3em;
+      right: 1em;
+    }
+    cursor: pointer;
+    transition: background-color $defaultSecond, color $defaultSecond;
+    &:hover {
+      background-color: $txt;
+      color: $sideBarBg;
+    }
+    > dt {
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+    > dd {
+      display: flex;
+      align-items: center;
+    }
+  }
 }

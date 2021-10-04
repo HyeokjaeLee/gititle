@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="Git commit title creation helper" />
     <meta name="author" content="Hyeokjae Lee" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#282c34" />
     <!--meta og-->
     <meta property="og:title" content="Gititle" />
     <meta property="og:url" content="" />
@@ -136,21 +136,29 @@
       <p id="version"></p>
     </div>
     <main id="contents">
-      <section id="searchResults" class="item-wrap search-result">
+      <section id="searchResults">
         <h2>{{searchedItems.emoji.length>0?"Emoji":""}}</h2>
-        <dl v-for="emoji in searchedItems.emoji" class="item large">
-          <dt class="content">{{emoji.content}}</dt>
-          <dd class="description">{{emoji.description}}</dd>
+        <dl
+          v-for="emoji in searchedItems.emoji"
+          class="searched-item"
+          v-on:click="set_emoji(emoji.content)"
+        >
+          <dt>{{emoji.content}}</dt>
+          <dd>{{emoji.description}}</dd>
         </dl>
         <h2>{{searchedItems.type.length>0?"Type":""}}</h2>
-        <dl v-for="type in searchedItems.type" class="item large">
-          <dt class="content">{{type.content}}</dt>
-          <dd class="description">{{type.description}}</dd>
+        <dl
+          v-for="type in searchedItems.type"
+          class="searched-item"
+          v-on:click="set_type(type.content)"
+        >
+          <dt>{{type.content}}</dt>
+          <dd>{{type.description}}</dd>
         </dl>
         <h2>{{searchedItems.keyword.length>0?"Keyword":""}}</h2>
-        <dl v-for="keyword in searchedItems.keyword" class="item large">
-          <dt class="content">{{keyword.content}}</dt>
-          <dd class="description">{{keyword.description}}</dd>
+        <dl v-for="keyword in searchedItems.keyword" class="searched-item">
+          <dt>{{keyword.content}}</dt>
+          <dd>{{keyword.description}}</dd>
         </dl>
       </section>
       <section class="item-wrap" id="emojiSection">
