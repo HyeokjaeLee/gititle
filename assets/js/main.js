@@ -97,6 +97,7 @@ function hide_all() {
   emojiSection.setAttribute("style", "display:none");
   typeSection.setAttribute("style", "display:none");
   logSection.setAttribute("style", "display:none");
+  window.scrollTo(0, -1000);
 }
 keywordSection.setAttribute("style", "display:none");
 typeSection.setAttribute("style", "display:none");
