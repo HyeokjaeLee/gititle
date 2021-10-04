@@ -102,6 +102,8 @@
     padding: 0 0.5em;
     font-weight: 400;
     transition: color $defaultSecond, background-color $defaultSecond;
+    color: $txt;
+    text-decoration: none;
     &:hover {
       background-color: $txt;
       color: $sideBarBg;
