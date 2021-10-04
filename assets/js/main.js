@@ -1,3 +1,30 @@
+const sidebar = new Vue({
+  el: "#sidebar",
+  data: {
+    searchKeyword: "",
+  },
+  methods: {
+    search: function () {
+      if (this.searchKeyword.length > 0) {
+        searchResults.setAttribute("style", "display:block");
+        contents.searchedItems.emoji = filter_items(contents.emojiList, this.searchKeyword);
+        contents.searchedItems.type = filter_items(contents.typeList, this.searchKeyword);
+        contents.searchedItems.keyword = filter_items(contents.keywordList, this.searchKeyword);
+        console.log(contents.searchedItems);
+      } else {
+        searchResults.removeAttribute("style");
+      }
+    },
+  },
+});
+
+const filter_items = (items, keyword) =>
+  items.filter(
+    (item) =>
+      item.content.toLowerCase().includes(keyword.toLowerCase()) ||
+      item.description.toLowerCase().includes(keyword.toLowerCase())
+  );
+
 const contents = new Vue({
   el: "#contents",
   data: {
@@ -8,6 +35,11 @@ const contents = new Vue({
     emojiList: emojiList,
     keywordList: keywordList,
     typeList: typeList,
+    searchedItems: {
+      emoji: [],
+      type: [],
+      keyword: [],
+    },
   },
   methods: {
     set_type: function (item) {
@@ -97,6 +129,7 @@ function hide_all() {
   emojiSection.setAttribute("style", "display:none");
   typeSection.setAttribute("style", "display:none");
   logSection.setAttribute("style", "display:none");
+  window.scrollTo(0, -1000);
 }
 keywordSection.setAttribute("style", "display:none");
 typeSection.setAttribute("style", "display:none");

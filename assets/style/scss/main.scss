@@ -17,6 +17,7 @@
   margin-bottom: 0.3em;
 }
 .sidebar-wrap {
+  z-index: 3;
   background-color: $sideBarBg;
   min-width: 25em;
   width: 25em;
@@ -27,14 +28,7 @@
   flex-direction: column;
 }
 
-.sidebar-icon {
-  fill: $txt;
-  width: 1.5em;
-  margin-right: 0.5em;
-  transition: fill $defaultSecond;
-}
-
-.sidebar {
+#sidebar {
   list-style: none;
   padding: 0 1em;
   > .input-wrap {
@@ -115,6 +109,12 @@
         fill: $sideBarBg;
       }
     }
+  }
+  .sidebar-icon {
+    fill: $txt;
+    width: 1.5em;
+    margin-right: 0.5em;
+    transition: fill $defaultSecond;
   }
 }
 
@@ -254,4 +254,43 @@
 
 .downloadPrompt {
   display: none;
+}
+
+#searchResults {
+  @include fadeInLeft(0.2s);
+  display: none;
+  position: fixed;
+  background-color: rgba($sideBarBg, 0.95);
+  width: 40em;
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: 2;
+
+  .searched-item {
+    gap: 0.6em;
+    display: flex;
+    border-radius: $borderRadius;
+    padding: 0.4em;
+    margin: {
+      top: 0.3em;
+      bottom: 0.3em;
+      right: 1em;
+    }
+    cursor: pointer;
+    transition: background-color $defaultSecond, color $defaultSecond;
+    &:hover {
+      background-color: $txt;
+      color: $sideBarBg;
+    }
+    > dt {
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+    > dd {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
