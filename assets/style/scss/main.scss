@@ -267,17 +267,17 @@
   height: 100vh;
   overflow-y: scroll;
   z-index: 2;
-
+  padding: 1em;
+  .no-result {
+    text-align: center;
+    font-size: 3em;
+  }
   .searched-item {
     gap: 0.6em;
     display: flex;
     border-radius: $borderRadius;
     padding: 0.4em;
-    margin: {
-      top: 0.3em;
-      bottom: 0.3em;
-      right: 1em;
-    }
+    margin: 0.5em 0;
     cursor: pointer;
     transition: background-color $defaultSecond, color $defaultSecond;
     &:hover {
