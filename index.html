@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Git commit title creation helper" />
+    <meta name="description" content="Git commit message creation helper" />
     <meta name="author" content="Hyeokjae Lee" />
-    <meta name="theme-color" content="#282c34" />
+    <meta name="theme-color" content="#3b3b3b" />
     <!--meta og-->
     <meta property="og:title" content="Gititle" />
     <meta property="og:url" content="" />
-    <meta property="og:description" content="Git commit title creation helper" />
+    <meta property="og:description" content="Git commit message creation helper" />
     <meta property="og:image" content="assets/icon/icon-512x512.png" />
     <meta property="og:type" content="website" />
     <!--icon-->
@@ -49,7 +49,7 @@
           </svg>
           <input
             type="text"
-            placeholder="Search... (not ready)"
+            placeholder="Search..."
             id="search"
             v-model="searchKeyword"
             @input="search"
@@ -137,6 +137,10 @@
     </div>
     <main id="contents">
       <section id="searchResults">
+        <p class="no-result">
+          {{searchedItems.emoji.length+searchedItems.type.length+searchedItems.keyword.length===0?`No
+          result found :(`:""}}
+        </p>
         <h2>{{searchedItems.emoji.length>0?"Emoji":""}}</h2>
         <dl
           v-for="emoji in searchedItems.emoji"

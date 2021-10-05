@@ -12,20 +12,24 @@ Gitile is designed to help you write more standardized commit message titles usi
 <br>Most of the environments that use Git is used is a PC.
 <br>:warning: So **it's not optimized for the mobile environment**.
 
+## :camera_flash: Capture![image](https://user-images.githubusercontent.com/71566740/135962101-3118e402-7d08-48c5-baf3-ed4e1d3a6fd4.png)
+
 ## :tada: Contributing to gittle
 
 If there is anything wrong or you want to add, please add it to the [issue section](https://github.com/HyeokjaeLee/gititle/issues).
 <br>I'll add it after checking it.
 
-## :test_tube: form example
+## :test_tube: form
 
 ```
-🚑️ Fix(#123): payment system
-🔒️ Fix(#321): authentication features
-🔥 Remove: unused files
-➖ Remove: axios from dependencies
-♻️ Simplify(router): variables
+<emoji> <type>(<scope>): <short summary> //header
+
+<body>
+
+<footer>
 ```
+
+Example: [Gititle Commits](https://github.com/HyeokjaeLee/gititle/commits/master)
 
 ## :truck: Link
 
