@@ -12,7 +12,8 @@ Gitile is designed to help you write more standardized commit message titles usi
 <br>Most of the environments that use Git is used is a PC.
 <br>:warning: So **it's not optimized for the mobile environment**.
 
-## :camera_flash: Capture![capture](https://user-images.githubusercontent.com/71566740/135963287-e5c18f62-da16-4dda-98cb-1dd4a7c2b720.png)
+## :camera_flash: Capture
+![capture](https://user-images.githubusercontent.com/71566740/135963287-e5c18f62-da16-4dda-98cb-1dd4a7c2b720.png)
 
 ## :tada: Contributing to gittle
 
