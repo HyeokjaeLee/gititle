@@ -273,6 +273,14 @@
   overflow-y: scroll;
   z-index: 2;
   padding: 1em;
+  > h2 {
+    display: inline;
+    padding: {
+      bottom: 0.1em;
+    }
+    margin-top: 1em;
+    border-bottom: 1px solid $txt;
+  }
   .no-result {
     text-align: center;
     font-size: 3em;
