@@ -21,7 +21,7 @@ function downloadButtonClicked() {
 }
 
 function show_download_button() {
-  document.querySelector(".downloadButton").style.display = "block";
+  document.querySelector(".downloadButton").style.display = "flex";
 }
 
 async function foo() {
