@@ -44,85 +44,68 @@
     <title>Gititle</title>
   </head>
   <body>
-    <section class="sidebar-wrap">
-      <h1 class="site-title">Gititle</h1>
-      <p class="site-description">Git commit message creation helper</p>
-      <ul id="sidebar">
-        <li class="input-wrap search">
-          <svg viewBox="0 0 24 24" class="sidebar-icon">
-            <path
-              d="m16 6a1 1 0 0 1 0 2h-8a1 1 0 0 1 0-2zm7.707 17.707a1 1 0 0 1 -1.414 0l-2.407-2.407a4.457 4.457 0 0 1 -2.386.7 4.5 4.5 0 1 1 4.5-4.5 4.457 4.457 0 0 1 -.7 2.386l2.407 2.407a1 1 0 0 1 0 1.414zm-6.207-3.707a2.5 2.5 0 1 0 -2.5-2.5 2.5 2.5 0 0 0 2.5 2.5zm-4.5 2h-6a3 3 0 0 1 -3-3v-14a3 3 0 0 1 3-3h12a1 1 0 0 1 1 1v8a1 1 0 0 0 2 0v-8a3 3 0 0 0 -3-3h-12a5.006 5.006 0 0 0 -5 5v14a5.006 5.006 0 0 0 5 5h6a1 1 0 0 0 0-2z"
-            />
-          </svg>
+    <section id="sidebar">
+      <header class="title">
+        <h1>Gititle</h1>
+        <p>Git commit message creation helper</p>
+      </header>
+      <div class="search">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="m16 6a1 1 0 0 1 0 2h-8a1 1 0 0 1 0-2zm7.707 17.707a1 1 0 0 1 -1.414 0l-2.407-2.407a4.457 4.457 0 0 1 -2.386.7 4.5 4.5 0 1 1 4.5-4.5 4.457 4.457 0 0 1 -.7 2.386l2.407 2.407a1 1 0 0 1 0 1.414zm-6.207-3.707a2.5 2.5 0 1 0 -2.5-2.5 2.5 2.5 0 0 0 2.5 2.5zm-4.5 2h-6a3 3 0 0 1 -3-3v-14a3 3 0 0 1 3-3h12a1 1 0 0 1 1 1v8a1 1 0 0 0 2 0v-8a3 3 0 0 0 -3-3h-12a5.006 5.006 0 0 0 -5 5v14a5.006 5.006 0 0 0 5 5h6a1 1 0 0 0 0-2z"
+          />
+        </svg>
+        <input type="text" placeholder="Search..." v-model="searchKeyword" @input="search" />
+      </div>
+      <article class="commit-message">
+        <header>
+          <button id="emoji" onclick="view_emoji()">🎨</button>
+          <button id="type" onclick="view_type()">refactor</button>
+          <button id="scope" onclick="view_type()"></button>:
           <input
             type="text"
-            placeholder="Search..."
-            id="search"
-            v-model="searchKeyword"
-            @input="search"
+            id="shortSummary"
+            placeholder="make log easier (#123)"
+            onclick="view_keyword()"
           />
-        </li>
-        <li class="input-wrap commit-message">
-          <div class="commit-header">
-            <span id="emoji" onclick="view_emoji()">🎨</span>
-            <span id="type" onclick="view_type()">refactor</span>
-            <span id="scope" onclick="view_type()"></span>:
-            <input
-              type="text"
-              id="shortSummary"
-              placeholder="make log easier (#123)"
-              onclick="view_keyword()"
-            />
-          </div>
-          <textarea
-            id="commitBody"
-            placeholder="* Refactor thread life cycle management&#13;&#10;* Simplify save_log()"
-            onclick="view_keyword()"
-          ></textarea>
-          <textarea
-            id="commitFooter"
-            placeholder="BREAKING CHANGE: update log module&#13;&#10;&#13;&#10;related to #123"
-            onclick="view_keyword()"
-          ></textarea>
-        </li>
-        <li>
-          <button onclick="copy_button()">
-            <svg viewBox="0 0 24 24" class="sidebar-icon">
-              <path
-                d="m13 20a5.006 5.006 0 0 0 5-5v-8.757a3.972 3.972 0 0 0 -1.172-2.829l-2.242-2.242a3.972 3.972 0 0 0 -2.829-1.172h-4.757a5.006 5.006 0 0 0 -5 5v10a5.006 5.006 0 0 0 5 5zm-9-5v-10a3 3 0 0 1 3-3s4.919.014 5 .024v1.976a2 2 0 0 0 2 2h1.976c.01.081.024 9 .024 9a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3-3zm18-7v11a5.006 5.006 0 0 1 -5 5h-9a1 1 0 0 1 0-2h9a3 3 0 0 0 3-3v-11a1 1 0 0 1 2 0z"
-              /></svg
-            >Copy
-          </button>
-        </li>
-        <li>
-          <button onclick="view_log()">
-            <svg viewBox="0 0 24 24" class="sidebar-icon">
-              <path
-                d="m23 11a1 1 0 0 0 -1 1 10.034 10.034 0 1 1 -2.9-7.021.862.862 0 0 1 -.1.021h-3a1 1 0 0 0 0 2h3a3 3 0 0 0 3-3v-3a1 1 0 0 0 -2 0v2.065a11.994 11.994 0 1 0 4 8.935 1 1 0 0 0 -1-1z"
-              />
-              <path
-                d="m12 6a1 1 0 0 0 -1 1v5a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414l-2.707-2.707v-4.586a1 1 0 0 0 -1-1z"
-              /></svg
-            >Recent copied commits
-          </button>
-        </li>
-        <li>
-          <a href="https://github.com/HyeokjaeLee/gititle">
-            <svg
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              class="sidebar-icon"
-            >
-              <title>GitHub</title>
-              <path
-                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-              />
-            </svg>
-            GitHub
-          </a>
-        </li>
-      </ul>
+        </header>
+        <textarea
+          id="commitBody"
+          placeholder="* Refactor thread life cycle management&#13;&#10;* Simplify save_log()"
+          onclick="view_keyword()"
+        ></textarea>
+        <textarea
+          id="commitFooter"
+          placeholder="BREAKING CHANGE: update log module&#13;&#10;&#13;&#10;related to #123"
+          onclick="view_keyword()"
+        ></textarea>
+      </article>
+      <button onclick="copy_button()">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="m13 20a5.006 5.006 0 0 0 5-5v-8.757a3.972 3.972 0 0 0 -1.172-2.829l-2.242-2.242a3.972 3.972 0 0 0 -2.829-1.172h-4.757a5.006 5.006 0 0 0 -5 5v10a5.006 5.006 0 0 0 5 5zm-9-5v-10a3 3 0 0 1 3-3s4.919.014 5 .024v1.976a2 2 0 0 0 2 2h1.976c.01.081.024 9 .024 9a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3-3zm18-7v11a5.006 5.006 0 0 1 -5 5h-9a1 1 0 0 1 0-2h9a3 3 0 0 0 3-3v-11a1 1 0 0 1 2 0z"
+          /></svg
+        ><span>Copy</span>
+      </button>
+      <button onclick="view_log()">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="m23 11a1 1 0 0 0 -1 1 10.034 10.034 0 1 1 -2.9-7.021.862.862 0 0 1 -.1.021h-3a1 1 0 0 0 0 2h3a3 3 0 0 0 3-3v-3a1 1 0 0 0 -2 0v2.065a11.994 11.994 0 1 0 4 8.935 1 1 0 0 0 -1-1z"
+          />
+          <path
+            d="m12 6a1 1 0 0 0 -1 1v5a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414l-2.707-2.707v-4.586a1 1 0 0 0 -1-1z"
+          /></svg
+        ><span>Recent copied commits</span>
+      </button>
+      <a href="https://github.com/HyeokjaeLee/gititle">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <title>GitHub</title>
+          <path
+            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+          />
+        </svg>
+        <span>GitHub</span>
+      </a>
       <button class="downloadButton">
         <svg version="1.1" viewBox="0 0 1000 1000" class="sidebar-icon">
           <g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)">
@@ -136,9 +119,9 @@
               d="M3409.1-3575.6c-157.9-68.3-247.4-249.8-214.4-426.5c21.2-110.8,139-240.4,245.1-271c58.9-18.8,584.4-23.6,1611.9-18.8c1496.4,7.1,1524.7,7.1,1588.3,56.5c124.9,91.9,162.6,167.3,162.6,315.8s-37.7,223.9-162.6,315.8c-63.6,49.5-89.5,49.5-1611.9,54.2C3776.7-3545,3465.6-3549.7,3409.1-3575.6z"
             />
           </g></svg
-        >Install Gititle
+        ><span>Install Gititle</span>
       </button>
-      <p id="version"></p>
+      <footer id="version"></footer>
     </section>
     <main id="contents">
       <section id="searchResults">

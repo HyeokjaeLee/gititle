@@ -3,120 +3,103 @@
 @import "./_default.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
-.site-title {
-  font-size: 2.2em;
-  margin: {
-    top: 0.5em;
-    bottom: 0.1em;
-  }
-  text-align: center;
-  font-weight: 700;
-}
-.site-description {
-  text-align: center;
-  margin-bottom: 0.3em;
-}
-.sidebar-wrap {
+//sidarbar styles
+#sidebar {
+  box-sizing: border-box;
   z-index: 3;
   background-color: $sideBarBg;
   min-width: 25em;
-  width: 25em;
   color: $txt;
-  min-height: 100vh;
-  overflow: auto;
+  padding: 0 1em;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
-}
-
-#sidebar {
-  list-style: none;
-  padding: 0 1em;
-  > .input-wrap {
-    padding: 0.5em;
-    background-color: $sideBarSubBg;
-    textarea,
-    input {
-      background-color: $sideBarSubBg;
-    }
-    &.search {
-      display: flex;
-      align-items: center;
-      > input {
-        flex: 1;
-        font-weight: 400;
-      }
-    }
-    &.commit-message {
-      font-size: 1.1em;
-      height: 17em;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5em;
-      > .commit-header {
-        display: flex;
-        width: 100%;
-        #shortSummary {
-          flex: 1;
-        }
-        #emoji,
-        #type,
-        #scope {
-          white-space: nowrap;
-          text-decoration-color: $sideBarSubBg;
-          transition: text-decoration-color $defaultSecond;
-          cursor: pointer;
-          &:hover {
-            text-decoration: underline;
-            text-decoration-color: $txt;
-          }
-        }
-        #type,
-        #shortSummary {
-          margin-left: 0.4em;
-        }
-      }
-      > #commitBody {
-        height: 9em;
-      }
-      > #commitFooter {
-        flex: 1;
-      }
-    }
-  }
-  > li {
-    margin: 0.5em 0;
-    font-weight: 300;
-    border-radius: $borderRadius;
-    font-size: 1.3em;
-    overflow: hidden;
-    height: 3em;
-  }
-  button,
-  a {
-    background-color: $sideBarBg;
-    display: block;
-    width: 100%;
-    height: 100%;
+  gap: 1em;
+  > * {
     display: flex;
+    padding: 0.8em;
+    border-radius: $borderRadius;
+  }
+  svg {
+    transition: fill 0.2s;
+    fill: $txt;
+    width: 2em;
+    height: 2em;
+    margin-right: 0.5em;
+  }
+  a,
+  button {
+    transition: background-color 0.2s, color 0.2s;
+    background-color: $sideBarBg;
     align-items: center;
-    padding: 0 0.5em;
-    font-weight: 400;
-    transition: color $defaultSecond, background-color $defaultSecond;
-    color: $txt;
-    text-decoration: none;
+    > span {
+      font-weight: 300;
+      font-size: 1.2em;
+    }
     &:hover {
-      background-color: $txt;
       color: $sideBarBg;
-      svg {
+      background-color: $txt;
+      > svg {
         fill: $sideBarBg;
       }
     }
   }
-  .sidebar-icon {
-    fill: $txt;
-    width: 1.5em;
-    margin-right: 0.5em;
-    transition: fill $defaultSecond;
+
+  .title {
+    flex-direction: column;
+    border-radius: 0;
+    position: sticky;
+    top: 0;
+    background-color: $sideBarBg;
+    box-shadow: rgba($sideBarBg, 0.95) 0px 0px 10px 10px;
+    > h1 {
+      font-size: 2.2em;
+      text-align: center;
+      font-weight: 700;
+    }
+    > p {
+      text-align: center;
+      margin-bottom: 0.3em;
+    }
+  }
+
+  .search {
+    align-items: center;
+    background-color: $sideBarSubBg;
+    > input {
+      font-size: 1.2em;
+      background-color: $sideBarSubBg;
+    }
+  }
+  .commit-message {
+    header {
+      display: flex;
+      input {
+        flex: 1;
+      }
+      #emoji {
+        margin-right: 0.3em;
+      }
+      #shortSummary {
+        margin-left: 0.3em;
+      }
+    }
+    #commitBody {
+      height: 10em;
+    }
+    #commitFooter {
+      height: 5em;
+    }
+    button {
+      background-color: $sideBarSubBg;
+    }
+    flex-direction: column;
+    background-color: $sideBarSubBg;
+    input,
+    textarea {
+      font-size: 1em;
+      background-color: $sideBarSubBg;
+    }
   }
 }
 
@@ -131,79 +114,79 @@
   flex-wrap: wrap;
   gap: 1em;
   justify-content: center;
-}
-
-.item {
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  border-radius: $borderRadius;
-  min-height: 5.5em;
-  transition: box-shadow $defaultSecond;
-  &:hover {
-    box-shadow: 0 0 0 0.5em rgba($txt, 0.1);
-    .example {
-      display: block;
-    }
-  }
-  &.small {
-    width: 20em;
-  }
-  &.medium {
-    width: 30em;
-  }
-  &.large {
-    width: 100%;
-  }
-  .content {
-    border-top-left-radius: $borderRadius;
-    border-bottom-left-radius: $borderRadius;
-    background-color: $contentBg;
-    font-weight: 500;
+  .item {
+    position: relative;
+    cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 0.2em;
-    &.emoji {
-      font-size: 2em;
-      width: 2.5em;
-    }
-    &.type {
-      font-size: 1.5em;
-      width: 5em;
-    }
-    &.keyword {
-      font-size: 1.3em;
-      width: 7em;
-    }
-  }
-  .description {
-    background-color: $descriptionBg;
-    border-top-right-radius: $borderRadius;
-    border-bottom-right-radius: $borderRadius;
-    padding: 0.5em 1em;
-    flex: 1;
-  }
-  .example {
-    font-size: 0.8em;
-    padding: 1em 1em;
     border-radius: $borderRadius;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($sideBarBg, 0.95);
-    position: absolute;
-    display: none;
-  }
-  &.log {
-    background-color: $descriptionBg;
-    padding: 0.5em;
-    flex-direction: column;
-    gap: 1em;
-    > h4 {
+    min-height: 5.5em;
+    transition: box-shadow $defaultSecond;
+    overflow: hidden;
+    &:hover {
+      box-shadow: 0 0 0 0.5em rgba($txt, 0.1);
+      .example {
+        display: block;
+      }
+    }
+    &.small {
+      width: 20em;
+    }
+    &.medium {
+      width: 30em;
+    }
+    &.large {
+      width: 100%;
+    }
+    .content {
+      border-top-left-radius: $borderRadius;
+      border-bottom-left-radius: $borderRadius;
+      background-color: $contentBg;
       font-weight: 500;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 0.2em;
+      &.emoji {
+        font-size: 2em;
+        width: 2.5em;
+      }
+      &.type {
+        font-size: 1.5em;
+        width: 5em;
+      }
+      &.keyword {
+        font-size: 1.3em;
+        width: 7em;
+      }
+    }
+    .description {
+      background-color: $descriptionBg;
+      border-top-right-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+      padding: 0.5em 1em;
+      flex: 1;
+    }
+    .example {
+      font-size: 0.8em;
+      padding: 1em 1em;
+      border-radius: $borderRadius;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($sideBarBg, 0.95);
+      position: absolute;
+      display: none;
+    }
+    &.log {
+      background-color: $descriptionBg;
+      padding: 0.5em;
+      flex-direction: column;
+      gap: 1em;
+      > h4 {
+        font-weight: 500;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
   }
 }
@@ -211,12 +194,16 @@
 #contents {
   flex: 1;
   min-width: 30em;
+  > footer {
+    text-align: center;
+    margin: 5em 0;
+    color: $descriptionBg;
+  }
 }
 
 #version {
+  justify-content: center;
   color: $descriptionBg;
-  margin: 1.5em;
-  text-align: center;
 }
 
 #scope-input {
@@ -252,11 +239,6 @@
   &.hide {
     @include fadeOutRight(0.5s);
   }
-}
-
-//수정
-.downloadButton {
-  display: none;
 }
 
 #searchResults {
@@ -295,5 +277,11 @@
       display: flex;
       align-items: center;
     }
+  }
+}
+
+#keywordSection {
+  > .item {
+    cursor: unset;
   }
 }
