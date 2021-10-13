@@ -77,25 +77,43 @@
   }
   .commit-message {
     header {
+      font-size: 1.05em;
       display: flex;
       input {
         flex: 1;
       }
       #emoji {
         margin-right: 0.3em;
+        padding-bottom: 0.1em;
+      }
+      #type {
+        margin-right: 0.2em;
+        padding: {
+          bottom: 0.1em;
+          left: 0.4em;
+          right: 0.4em;
+        }
       }
       #shortSummary {
         margin-left: 0.3em;
       }
+      #emoji,
+      #type {
+        border-radius: $borderRadius;
+        background-color: $sideBarSubBg;
+        border: 1px solid $txt;
+        &:hover {
+          background-color: $txt;
+        }
+      }
     }
     #commitBody {
+      margin-top: 0.5em;
       height: 10em;
     }
     #commitFooter {
+      margin-top: 0.5em;
       height: 5em;
-    }
-    button {
-      background-color: $sideBarSubBg;
     }
     flex-direction: column;
     background-color: $sideBarSubBg;
