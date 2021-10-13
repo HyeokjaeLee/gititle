@@ -25,6 +25,19 @@
     <!--vue.js-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--script-->
+    <script src="assets/js/data.js"></script>
+    <script defer type="text/javascript">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register(`service-worker.js`).then(function () {
+          console.log("Service Worker Registered");
+        });
+      }
+    </script>
+    <script defer src="assets/js/settings.js"></script>
+    <script defer src="assets/js/install-handler.js"></script>
+    <script defer src="assets/js/cache-handler.js"></script>
+    <script defer src="assets/js/main.js"></script>
     <!--others-->
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="assets/style/css/main.min.css" />
@@ -205,18 +218,5 @@
     <div id="notification" class="default">
       The Commit message has been copied to the clipboard.
     </div>
-    <!--script-->
-    <script type="text/javascript">
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register(`service-worker.js`).then(function () {
-          console.log("Service Worker Registered");
-        });
-      }
-    </script>
-    <script src="assets/js/data.js"></script>
-    <script defer src="assets/js/settings.js"></script>
-    <script defer src="assets/js/install-handler.js"></script>
-    <script defer src="assets/js/cache-handler.js"></script>
-    <script defer src="assets/js/main.js"></script>
   </body>
 </html>
