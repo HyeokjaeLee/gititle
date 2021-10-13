@@ -21,8 +21,16 @@ function downloadButtonClicked() {
 }
 
 function showDownloadPrompt() {
-  document.querySelector(".downloadPrompt").style.display = "block";
+  document.querySelector(".downloadPrompt").style.display = "grid";
 }
+
+window.addEventListener("appinstalled", (evt) => {
+  // Log install to analytics
+
+  if (!isInStandaloneMode()) {
+    alert("open in app");
+  }
+});
 
 async function foo() {
   if ("getInstalledRelatedApps" in window.navigator) {
