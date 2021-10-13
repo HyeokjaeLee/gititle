@@ -1,4 +1,5 @@
 var deferredInstallPrompt = null;
+
 window.addEventListener("beforeinstallprompt", function (event) {
   event.preventDefault();
   deferredInstallPrompt = event;
