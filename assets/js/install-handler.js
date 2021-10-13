@@ -3,7 +3,7 @@ var deferredInstallPrompt = null;
 window.addEventListener("beforeinstallprompt", function (event) {
   event.preventDefault();
   deferredInstallPrompt = event;
-  showDownloadPrompt();
+  show_download_button();
 });
 
 document.querySelector(".downloadButton").addEventListener("click", downloadButtonClicked);
@@ -13,15 +13,15 @@ function downloadButtonClicked() {
   deferredInstallPrompt.userChoice.then(function (choiceResult) {
     if (choiceResult.outcome === "accepted") {
       deferredInstallPrompt = null;
-      document.querySelector(".downloadPrompt").style.display = "none";
+      document.querySelector(".downloadButton").style.display = "none";
     } else {
       console.log(choiceResult);
     }
   });
 }
 
-function showDownloadPrompt() {
-  document.querySelector(".downloadPrompt").style.display = "grid";
+function show_download_button() {
+  document.querySelector(".downloadButton").style.display = "block";
 }
 
 async function foo() {

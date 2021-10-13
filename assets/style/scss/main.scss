@@ -253,13 +253,9 @@
     @include fadeOutRight(0.5s);
   }
 }
-.downloadPrompt,
-.promptControllers,
-.downloadButton {
-  height: 100%;
-}
 
-.downloadPrompt {
+//수정
+.downloadButton {
   display: none;
 }
 
