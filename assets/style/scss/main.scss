@@ -45,6 +45,10 @@
     }
   }
 
+  .downloadButton {
+    display: none;
+  }
+
   .title {
     flex-direction: column;
     border-radius: 0;
@@ -63,7 +67,7 @@
     }
   }
 
-  .search {
+  #search {
     align-items: center;
     background-color: $sideBarSubBg;
     > input {
@@ -278,10 +282,6 @@
       align-items: center;
     }
   }
-}
-
-.downloadButton {
-  display: none;
 }
 
 #keywordSection {

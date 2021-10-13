@@ -1,5 +1,5 @@
-const sidebar = new Vue({
-  el: "#sidebar",
+const search = new Vue({
+  el: "#search",
   data: {
     searchKeyword: "",
   },
