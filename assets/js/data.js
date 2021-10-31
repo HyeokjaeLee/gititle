@@ -203,28 +203,27 @@ const emojiList = [
     },
     {
       content: "ci",
-      description: "Changes to our CI configuration files and scripts",
+      description: "Changes to CI configuration files and scripts",
     },
     {
       content: "docs",
-      description: "Documentation only changes",
+      description: "Changes to only document",
     },
     {
       content: "feat",
-      description: "A new feature",
+      description: "Related to new feature",
     },
     {
       content: "fix",
-      description: "A bug fix",
+      description: "Related to bug fix",
     },
     {
       content: "perf",
-      description: "A code change that improves performance",
+      description: "Changes to improves performance",
     },
     {
       content: "refactor",
-      description:
-        "A code change that neither fixes a bug, improves performance nor adds a feature",
+      description: "Changes that neither fixes a bug, improves performance nor adds a feature",
     },
     {
       content: "test",
