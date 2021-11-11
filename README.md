@@ -30,7 +30,7 @@ Example: [Gititle Commits](https://github.com/HyeokjaeLee/gititle/commits/master
 
 ![capture](https://user-images.githubusercontent.com/71566740/135963287-e5c18f62-da16-4dda-98cb-1dd4a7c2b720.png)
 
-## Contributing to gittle
+## Contributing to Gititle
 
 If there is anything wrong or you want to add, please add it to the [issue section](https://github.com/HyeokjaeLee/gititle/issues).
 
