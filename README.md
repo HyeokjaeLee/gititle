@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/badge/Gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
 </a>
 
-**⚠️ It's not optimized for mobile environments.**
+> **⚠️ It's not optimized for mobile environments.**
 
 ## 📝 About
 
