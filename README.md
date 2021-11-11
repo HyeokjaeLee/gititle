@@ -4,23 +4,24 @@
 <img src="https://img.shields.io/badge/Gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
 </a>
 
-> Github Commit Title Creation Helper<br>
+:warning: It's not optimized for mobile environments.
 
-## :memo: About
+## 📝 About
 
-Gitile is designed to help you write more standardized commit message titles using emoji.
-<br>Most of the environments that use Git is used is a PC.
-<br>:warning: So **it's not optimized for the mobile environment**.
+Gitile is a project that helps you write a formal Git commit message.
 
-## :camera_flash: Capture
+## 📸 Preview
+
+### [Gititle](https://hyeokjaelee.github.io/gititle/)
+
 ![capture](https://user-images.githubusercontent.com/71566740/135963287-e5c18f62-da16-4dda-98cb-1dd4a7c2b720.png)
 
-## :tada: Contributing to gittle
+## 🎉 Contributing to gittle
 
 If there is anything wrong or you want to add, please add it to the [issue section](https://github.com/HyeokjaeLee/gititle/issues).
 <br>I'll add it after checking it.
 
-## :test_tube: form
+## 🧪 form
 
 ```
 <emoji> <type>(<scope>): <short summary> //header
@@ -31,7 +32,3 @@ If there is anything wrong or you want to add, please add it to the [issue secti
 ```
 
 Example: [Gititle Commits](https://github.com/HyeokjaeLee/gititle/commits/master)
-
-## :truck: Link
-
-https://hyeokjaelee.github.io/gititle/
