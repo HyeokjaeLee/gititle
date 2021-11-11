@@ -10,6 +10,8 @@
 
 Gitile is a project that helps you write a formal Git commit message.
 
+It is based on [AngularJS Git Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit) and [Gitmoji](https://github.com/carloscuesta/gitmoji).
+
 ## 📸 Preview
 
 ### [Gititle](https://hyeokjaelee.github.io/gititle/)
