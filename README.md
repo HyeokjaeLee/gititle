@@ -4,26 +4,19 @@
 <img src="https://img.shields.io/badge/Gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
 </a>
 
-> **⚠️ It's not optimized for mobile environments.**
-
-## 📝 About
+## About
 
 Gitile is a project that helps you write a formal Git commit message.
 
 It is based on [AngularJS Git Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit) and [Gitmoji](https://github.com/carloscuesta/gitmoji).
 
-## 📸 Preview
+### ⚠️ Notice
 
-### [Gititle](https://hyeokjaelee.github.io/gititle/)
+It's not optimized for mobile environments.
 
-![capture](https://user-images.githubusercontent.com/71566740/135963287-e5c18f62-da16-4dda-98cb-1dd4a7c2b720.png)
+## Preview [Gititle](https://hyeokjaelee.github.io/gititle/)
 
-## 🎉 Contributing to gittle
-
-If there is anything wrong or you want to add, please add it to the [issue section](https://github.com/HyeokjaeLee/gititle/issues).
-<br>I'll add it after checking it.
-
-## 🧪 form
+### 🧪 Commit message form
 
 ```
 <emoji> <type>(<scope>): <short summary> //header
@@ -34,3 +27,11 @@ If there is anything wrong or you want to add, please add it to the [issue secti
 ```
 
 Example: [Gititle Commits](https://github.com/HyeokjaeLee/gititle/commits/master)
+
+![capture](https://user-images.githubusercontent.com/71566740/135963287-e5c18f62-da16-4dda-98cb-1dd4a7c2b720.png)
+
+## Contributing to gittle
+
+If there is anything wrong or you want to add, please add it to the [issue section](https://github.com/HyeokjaeLee/gititle/issues).
+
+I'll add it after checking it.
