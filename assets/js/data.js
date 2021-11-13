@@ -235,6 +235,6 @@ const emojiList = [
     },
     {
       content: "merge",
-      description: Merge to the other branch"
+      description: "Merge to the other branch"
     }
   ];
