@@ -233,4 +233,8 @@ const emojiList = [
       content: "revert",
       description: "Revert to previous commit",
     },
+    {
+      content: "merge",
+      description: "Merge to the other branch"
+    }
   ];
